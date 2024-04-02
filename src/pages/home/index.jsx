@@ -1,9 +1,10 @@
-import { FetchData } from "../../components/home";
+import { GetData } from "../../components/pegarDados";
 
 export default function Home () {
  return (
     <>
-        <FetchData />
+        <GetData />
+
     </>
   )
 }
