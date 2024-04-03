@@ -4,6 +4,7 @@ import Card from "../cards";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PropTypes from 'prop-types';
+import { NavBar } from "../navBar";
 
 export const GetData = ({setPokemonData}) => {
    const [pokemons, setPokemon] = useState([])
@@ -31,10 +32,16 @@ export const GetData = ({setPokemonData}) => {
       setPokemonVisiveis(pokemonsVisiveis => pokemonsVisiveis + 10);
    }
 
-
+   const getPokemons = (name) => {
+      const filteredPokemons = pokemons.filter(pokemon => pokemon.name.includes(name.toLowerCase()));
+      name ? setPokemon(filteredPokemons) : setPokemon(pokemons);
+  };
+  
+   
 
    return (
       <>
+         <NavBar getPokemons={getPokemons} />
          <Lista>
             {pokemons.slice(0, pokemonsVisiveis).map((pokemon, index) => (
                <Card key={index}>
@@ -75,3 +82,4 @@ const Item = styled.li`
 GetData.propTypes = {
    setPokemonData: PropTypes.func.isRequired 
  };
+
