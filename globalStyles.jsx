@@ -1,6 +1,13 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
+   *{
+      margin: 0 auto;
+      padding: 0;
+      border:none;
+      list-style: none;
+      text-decoration: none;
+   }
    button{
       padding: 10px;
       font-weight: bold;
@@ -22,8 +29,16 @@ const GlobalStyle = createGlobalStyle`
    img{
       border: solid 1px black;
       border-radius: 5px;
-      padding: 10px;
       background-color: lightgrey;
+      width: 125px;
+   }
+   .container {
+      display: flex;
+      flex-direction: column;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
    }
 `
 
