@@ -1,13 +1,14 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./home"
-import { PokemonData } from "./pokemonData"
+import { PokemonPerfil } from "./pokemonPerfil"
+import { useState } from "react"
 
-
-const AppRoutes = () => {
+function AppRoutes () {
+   const [pokemonData, setPokemonData] = useState()
    return (
       <Routes>
-         <Route path="/" element={<Home />} />
-         <Route path="pokemon/:id" element={<PokemonData/>} />
+         <Route path="/" element={<Home setPokemonData={setPokemonData} />} />
+         <Route path="pokemon/:id" element={<PokemonPerfil pokemonData={pokemonData} />} />
       </Routes>
    )
 }

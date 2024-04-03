@@ -3,20 +3,21 @@ import { useEffect, useState } from "react";
 import Card from "../cards";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
-export const GetData = () => {
-   const [pokemonData, getPokemonData] = useState([])
+export const GetData = ({setPokemonData}) => {
+   const [pokemons, setPokemon] = useState([])
    const [pokemonsVisiveis, setPokemonVisiveis] = useState(10)
 
    const axiosData = async () => {
       try {
-         const urls = [];
+         const urls = []; 
          for (let i = 1; i <= 50; i++) urls.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
 
          const responses = await axios.all(urls.map(url => axios.get(url)))
          const data = responses.map((response) => response.data)
 
-         getPokemonData(data)
+         setPokemon(data)
       } catch (error) {
          console.error(`Error fetching Pokemon API: ${error.message}`)
       }
@@ -30,24 +31,22 @@ export const GetData = () => {
       setPokemonVisiveis(pokemonsVisiveis => pokemonsVisiveis + 10);
    }
 
+
+
    return (
       <>
-         <h1>Pokemons</h1>
-
-         <Deck>
-            <Lista>
-               {pokemonData.slice(0, pokemonsVisiveis).map((pokemon, index) => (
-                  <Card key={index}>
-                     <Link to={`/pokemon/${pokemon.id}`}>
-                        <Item>
-                           <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-                           <h2>{pokemon.name}</h2>
-                        </Item>
-                     </Link>
-                  </Card>
-               ))}
-            </Lista>
-         </Deck>
+         <Lista>
+            {pokemons.slice(0, pokemonsVisiveis).map((pokemon, index) => (
+               <Card key={index}>
+                  <Link to={`/pokemon/${pokemon.name}`} onClick={() => setPokemonData(pokemon)}>
+                     <Item>
+                        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+                        <h2>{pokemon.name}</h2>
+                     </Item>
+                  </Link>
+               </Card>
+            ))}
+         </Lista>
 
          {pokemonsVisiveis < 1002 && (
             <button onClick={handlerShowMore}>Buscar Mais</button>
@@ -55,11 +54,6 @@ export const GetData = () => {
       </>
    )
 }
-
-const Deck = styled.section`
-   max-width: 875px;
-   padding: 25px;
-`
 
 const Lista = styled.ul`
    display: flex;
@@ -77,3 +71,7 @@ const Item = styled.li`
    flex-direction: column;
    justify-content: space-evenly;
 `
+
+GetData.propTypes = {
+   setPokemonData: PropTypes.func.isRequired 
+ };

@@ -16,20 +16,15 @@ const GlobalStyle = createGlobalStyle`
       border: solid 1px black;
       margin-bottom: 50px;
    }
-   h1{
-      font: 50px;
-      text-align: center;
-      padding: 30px;
-   }
    h2 {
       color: #141313;
       text-transform: capitalize;
       font-size: 20px;
    }
-   img{
-      border: solid 1px black;
+      img{
+      /* border: solid 1px black; */
       border-radius: 5px;
-      background-color: lightgrey;
+      /* background-color: lightgrey; */
       width: 125px;
    }
    .container {
