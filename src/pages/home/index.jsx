@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 export default function Home({ setPokemonData }) {
   return (
     <>
-      <main className="container">
-        <GetData setPokemonData={setPokemonData} />
-      </main>
+      <GetData setPokemonData={setPokemonData} />
     </>
   )
 }
 
 Home.propTypes = {
-  setPokemonData: PropTypes.any.isRequired 
+  setPokemonData: PropTypes.any.isRequired
 };
