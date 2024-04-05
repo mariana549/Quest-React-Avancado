@@ -11,19 +11,6 @@ const GlobalStyle = createGlobalStyle`
       text-decoration: none;
       font-family: "Roboto", sans-serif;
    }
-   h2 {
-      color: #141313;
-      text-transform: capitalize;
-      font-size: 20px;
-      font-weight: 700;
-   }
-
-   img{
-      /* border: solid 1px black; */
-      border-radius: 5px;
-      /* background-color: lightgrey; */
-      width: 120px;
-   }
 
    .container {
       padding: 2rem;

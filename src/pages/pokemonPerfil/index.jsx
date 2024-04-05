@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { NavBar } from '../../components/navBar';
 
 export const PokemonPerfil = ({ pokemonData }) => {
   console.log('PokemonPerfil', pokemonData)
   return (
     <>
+    <NavBar />
+    
       <main className='container'>
-        <Link to={"/"}>Voltar home</Link>
+        <Link to={"/"}><Voltar>Voltar home</Voltar></Link>
+
         <h1>Perfil Pokemon</h1>
         <Imagem src={pokemonData.sprites.front_default} alt={pokemonData.name} />
         <h2>{pokemonData.name}</h2>
@@ -29,6 +33,12 @@ export const PokemonPerfil = ({ pokemonData }) => {
     </>
   )
 }
+
+const Voltar = styled.components`
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
+`
 
 PokemonPerfil.propTypes = {
   pokemonData: PropTypes.any.isRequired

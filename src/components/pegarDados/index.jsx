@@ -49,18 +49,20 @@ export const GetData = ({ setPokemonData }) => {
    return (
       <>
          <NavBar getPokemons={getPokemons} />
+
          <main className="container box">
             <Lista>
                {pokemons.slice(0, pokemonsVisiveis).map((pokemon, index) => (
-                  <Link to={`/pokemon/${pokemon.name}`} onClick={() => setPokemonData(pokemon)} key={index}>
-                     <Card img={pokemon.sprites.front_default} name={pokemon.name} />
+                  <Link to={`/Perfil/${pokemon.name}`} onClick={() => setPokemonData(pokemon)} key={index}>
+                     <Card img={pokemon.sprites.front_default} img2={pokemon.sprites.back_default} name={pokemon.name} />
                   </Link>
                ))}
             </Lista>
+
+            {pokemonsVisiveis < 1302 && (
+               <Button onClick={handlerShowMore}>Buscar Mais</Button>
+            )}
          </main>
-         {pokemonsVisiveis < 1302 && (
-            <Button onClick={handlerShowMore}>Buscar Mais</Button>
-         )}
       </>
    )
 }
