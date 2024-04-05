@@ -1,7 +1,7 @@
-import { GetData } from "../../components/pegarDados";
 import PropTypes from 'prop-types';
+import { GetData } from '../../components/pegarDados';
 
-export default function Home({ setPokemonData }) {
+export default function Home({setPokemonData}) {
   return (
     <>
       <GetData setPokemonData={setPokemonData} />

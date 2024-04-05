@@ -6,8 +6,8 @@ export const NavBar = ({ getPokemons }) => {
       <>
          <Nav>
             <Div>
-               <img src="public/assests/image.png" alt="Logo" />
-               <h1>Pokemon</h1>
+               <img src="public/assets/image/image.png" alt="Logo-icon" />
+               <Logo src="public/assets/image/pokemon-logo.png" alt="Logo" />
             </Div>
             <Pesquisar type="text" placeholder="Pesquisando...." className="pesquisando" onChange={e => getPokemons(e.target.value)} />
          </Nav>
@@ -20,7 +20,6 @@ const Nav = styled.nav`
    align-items: center;
    background-color: black;
    color: #F85B44;
-   font-size: 50px;
    width: 100%;
    height: 200px;
 `
@@ -32,12 +31,16 @@ const Div = styled.div`
 `
 
 const Pesquisar = styled.input`
-   background-color: #f85c4439;
+   background-color: #2e6db541;
    padding: 10px;
    color: black;
-   border: solid 1px #F85B44;
+   border: solid 1px #FFCB05;
    border-radius: 10px;
 `
+const Logo = styled.img`
+   width: 300px;
+`
+
 NavBar.propTypes = {
    getPokemons: PropTypes.func.isRequired
 }

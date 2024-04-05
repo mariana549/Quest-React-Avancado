@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PropTypes from 'prop-types';
 import { NavBar } from "../navBar";
+import { Button } from "../Button";
 
 export const GetData = ({ setPokemonData }) => {
    const [pokemons, setPokemon] = useState([])
@@ -51,20 +52,14 @@ export const GetData = ({ setPokemonData }) => {
          <main className="container box">
             <Lista>
                {pokemons.slice(0, pokemonsVisiveis).map((pokemon, index) => (
-                  <Card key={index}>
-                     <Link to={`/pokemon/${pokemon.name}`} onClick={() => setPokemonData(pokemon)}>
-                        <Item>
-                           <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-                           <h2>{pokemon.name}</h2>
-                        </Item>
-                     </Link>
-                  </Card>
+                  <Link to={`/pokemon/${pokemon.name}`} onClick={() => setPokemonData(pokemon)} key={index}>
+                     <Card img={pokemon.sprites.front_default} name={pokemon.name} />
+                  </Link>
                ))}
             </Lista>
          </main>
-
          {pokemonsVisiveis < 1302 && (
-            <button onClick={handlerShowMore}>Buscar Mais</button>
+            <Button onClick={handlerShowMore}>Buscar Mais</Button>
          )}
       </>
    )
@@ -75,16 +70,6 @@ const Lista = styled.ul`
    flex-wrap: wrap;
    width: 100%;
    gap: 15px;
-`
-
-const Item = styled.li`
-   width: 150px;
-   height: 250px;
-   background: #fffbf2;
-   border: solid 2px black;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-evenly;
 `
 
 GetData.propTypes = {
