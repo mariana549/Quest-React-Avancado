@@ -54,7 +54,11 @@ export const GetData = ({ setPokemonData }) => {
             <Lista>
                {pokemons.slice(0, pokemonsVisiveis).map((pokemon, index) => (
                   <Link to={`/Perfil/${pokemon.name}`} onClick={() => setPokemonData(pokemon)} key={index}>
-                     <Card img={pokemon.sprites.front_default} img2={pokemon.sprites.back_default} name={pokemon.name} />
+                     <Card 
+                     img={pokemon.sprites.front_default}
+                     img2={pokemon.sprites.back_default}
+                     name={pokemon.name} 
+                     />
                   </Link>
                ))}
             </Lista>

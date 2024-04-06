@@ -44,10 +44,6 @@ const PokemonImage = styled.img`
    height: 150px;
    margin: 0;
    transition: transform 0.5s ease; 
-
-   &:hover {
-      transform: rotateY(180deg);
-   }
 `
 const NomePokemon = styled.h2`
    font-size: 25px;

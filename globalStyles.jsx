@@ -13,8 +13,11 @@ const GlobalStyle = createGlobalStyle`
    }
 
    .container {
-      padding: 2rem;
       max-width: 1280px;
+   }
+   
+   .box {
+      padding: 2rem;
    }
 `
 

@@ -8,7 +8,7 @@ function AppRoutes () {
    return (
       <Routes>
          <Route path="/" element={<Home setPokemonData={setPokemonData} />} />
-         <Route path="pokemon/:id" element={<PokemonPerfil pokemonData={pokemonData} />} />
+         <Route path="Perfil/:id" element={<PokemonPerfil pokemonData={pokemonData} />} />
       </Routes>
    )
 }
