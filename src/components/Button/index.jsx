@@ -16,7 +16,7 @@ const Botao = styled.button`
    border-radius: 5px;
    background-color: #fffbf2;
    border: solid 1px black;
-   margin-bottom: 50px;
+   margin-top: 50px;
 `
 
 // const Botao = styled.button`
