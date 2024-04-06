@@ -45,7 +45,7 @@ export const PokemonPerfil = ({ pokemonData }) => {
           <Imagem src={isImage ? imagens.front : imagens.front_shiny} alt={pokemonData.name} />
         </ImgContainer>
 
-        <Habilidades className='box'>
+        <Habilidades>
           <H3>Habilidades</H3>
           <List>
             {pokemonData.abilities.map((dados, i) => (
@@ -69,20 +69,23 @@ export const PokemonPerfil = ({ pokemonData }) => {
 }
 
 const Main = styled.main`
-  background-color: #fff8f4;
+  background-color: #17171384;
   display: grid;
   grid-template-areas: 
   "ImgContainer habilidades"
   "movimentos movimentos";
+  border: 3px solid #00000058;
+  border-radius: 0px 0px 25px 25px;
+  box-shadow: 0px 3px 5px #080e0692;
 `
 
 const ImgContainer = styled.div`
   grid-area: ImgContainer;
   display: flex;
   align-items: center;
-  background-color: #30622094;
+  background-color: #59b43ba6;
   border-radius: 0px 40px;
-  box-shadow: 0px 3px 5px #162d0f93;
+  box-shadow: 0px 3px 5px #080e0692;
 `
 
 const ConteudoBox = styled.div`
@@ -110,7 +113,7 @@ const Tipo = styled.li`
   background-color: #162d0f4a;
   font-size: 20px;
   padding: 5px;
-  border: solid 2px #30622094;
+  border: solid 2px #1a510792;
   border-radius: 5px;
   text-transform: capitalize;
   `
@@ -123,12 +126,13 @@ const Tipo = styled.li`
   `
 
   const Imagem = styled.img`
-  width: 450px;
+    width: 450px;
   `
 
 const Habilidades = styled.div`
   grid-area: habilidades;
   align-self: center;
+  width: 350px;
 `
 
 const Movimentos = styled.div`
@@ -136,7 +140,7 @@ const Movimentos = styled.div`
 `
 
 const H3 = styled.h3`
-  color: #183211;
+  color: #fff;
   font-weight: 700;
   font-size: 40px;
   text-align: center;
@@ -148,7 +152,7 @@ const List = styled.ul`
   flex-wrap: wrap;
   gap: 10px;
   font-weight: 500;
-  color: #162d0fc2;
+  color: #3cbe9ef5;
   text-transform: capitalize;
 `
 
@@ -160,7 +164,7 @@ const Li = styled.li`
 `
 
 const Voltar = styled.p`
-  color: #ec7000;
+  color: #1acca0f5;
   font-size: 17px;
   font-weight: 900;
   margin-top: 10px;

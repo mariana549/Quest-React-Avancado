@@ -29,8 +29,8 @@ const Item = styled.li`
    align-items: center;
    width: 300px;
    height: 150px;
-   background: #fffbf2;
-   border: solid 2px black;
+   background: #000000a9;
+   border: solid 2px #fff;
    border-radius: 20px;
    transition: transform 0.3s ease; 
 
@@ -47,7 +47,7 @@ const PokemonImage = styled.img`
 `
 const NomePokemon = styled.h2`
    font-size: 25px;
-   color: #141313;
+   color: #fff;
    text-transform: capitalize;
    padding-left: 10px;
 `

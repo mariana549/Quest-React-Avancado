@@ -19,8 +19,7 @@ export const NavBar = ({ getPokemons }) => {
 const Nav = styled.nav`
    display: flex;
    align-items: center;
-   background-color: #EE8329;
-   color: #F85B44;
+   background-color: black;
    width: 100%;
    height: 200px;
 `
