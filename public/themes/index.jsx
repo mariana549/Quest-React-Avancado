@@ -1,5 +1,5 @@
 export const themes = {
-   ligth: {
+   light: {
       bodyBg: "#fff",
       navBarBg: "#EE8329",
       card:{

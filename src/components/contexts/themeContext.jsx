@@ -1,10 +1,11 @@
 import { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import { themes } from '../../../public/themes';
 
-const ThemeContext = createContext();
+export const ThemeContext = createContext({});
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(themes);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
