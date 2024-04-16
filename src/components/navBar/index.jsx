@@ -13,7 +13,7 @@ export const NavBar = ({ getPokemons }) => {
          <ThemeProvider>
             <Nav theme={theme}>
                <Link to={"/"}>
-                  <IconLogo src="../image/logo-icon.png" alt="Logo-icon" />
+                  <IconLogo src="public/assets/image/logo-icon.png" alt="Logo-icon" />
                </Link>
                <Logo src="public/assets/image/pokemon-logo.png" alt="Logo" />
                <ThemeToggleButton />
