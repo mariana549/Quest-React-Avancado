@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import Card from "../cards";
+import Card from "./cards";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PropTypes from 'prop-types';
