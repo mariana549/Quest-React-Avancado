@@ -7,7 +7,7 @@ export const ThemeToggleButton = () => {
    return (
       <div>
          <Button onClick={() => setTheme(theme === theme.light ? theme.dark : theme.light)}>
-            Tema {theme ? "light": "Dark"} 
+            Tema {theme === theme.light ? "light" : "Dark"} 
          </Button>
       </div>
    )

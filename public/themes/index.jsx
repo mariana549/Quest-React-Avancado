@@ -3,7 +3,7 @@ export const themes = {
       bodyBg: "#fff",
       navBarBg: "#EE8329",
       card:{
-         ItemBg: "#fffbf2",
+         itemBg: "#fffbf2",
          itemBorder: "black",
          NomeColor: "#141313",
       },
@@ -29,7 +29,7 @@ export const themes = {
       bodyBg: "#263F79",
       navBarBg: "black",
       card: {
-         ItemBg: "#000000a9",
+         itemBg: "#000000a9",
          itemBorder: "white",
          NomeColor: "white",
       },

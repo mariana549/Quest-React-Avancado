@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-// import { NavBar } from '../../components/navBar';
 import { useEffect, useState } from 'react';
 
-export const PokemonPerfil = ({ pokemonData }) => {
+export const Pokemon = ({ pokemonData }) => {
   const [isImage, setIsImage] = useState(true);
 
   const imagens = {
@@ -172,6 +171,6 @@ const Voltar = styled.p`
   padding-top: 30px;
 `
   
-  PokemonPerfil.propTypes = {
-    pokemonData: PropTypes.any.isRequired
-  }
+Pokemon.propTypes = {
+   pokemonData: PropTypes.any.isRequired
+}

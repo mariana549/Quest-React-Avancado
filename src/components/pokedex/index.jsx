@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { NavBar } from "../navBar";
 import { Button } from "../Button";
 
-export const GetData = ({ setPokemonData }) => {
+export const GetPokedex = ({ setPokemonData }) => {
    const [pokemons, setPokemon] = useState([])
    const [pokemonsVisiveis, setPokemonVisiveis] = useState(10)
 
@@ -40,7 +40,8 @@ export const GetData = ({ setPokemonData }) => {
    }
 
    const getPokemons = (name) => {
-      const filteredPokemons = pokemons.filter(pokemon => pokemon.name.includes(name.toLowerCase()));
+      const filteredPokemons = pokemons.filter(pokemon =>  
+         pokemon.name.includes(name.toLowerCase()))
       name ? setPokemon(filteredPokemons) : setPokemon(pokemons);
    };
 
@@ -78,7 +79,7 @@ const Lista = styled.ul`
    gap: 15px;
 `
 
-GetData.propTypes = {
+GetPokedex.propTypes = {
    setPokemonData: PropTypes.func.isRequired
 };
 

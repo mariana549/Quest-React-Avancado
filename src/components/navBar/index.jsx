@@ -1,17 +1,16 @@
 import styled from "styled-components"
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import { ThemeContext, ThemeProvider } from "../contexts/themeContext";
+// import { ThemeContext, ThemeProvider } from "../contexts/themeContext";
 import { ThemeToggleButton } from "../toggleThemeButton";
-import { useContext } from "react";
+// import { useContext } from "react";
 
 export const NavBar = ({ getPokemons }) => {
-   const { theme } = useContext(ThemeContext)
-   console.log("navBar",theme)
+   // const { theme } = useContext(ThemeContext)
 
    return (
       <>
-         <ThemeProvider>
+         {/* <ThemeProvider > */}
             <Nav>
                <Link to={"/"}>
                   <IconLogo src="public/assets/image/logo-icon.png" alt="Logo-icon" />
@@ -20,7 +19,7 @@ export const NavBar = ({ getPokemons }) => {
                <ThemeToggleButton />
                <Pesquisar type="text" placeholder="Pesquisando...." className="pesquisando" onChange={e => getPokemons(e.target.value)} />
             </Nav>
-         </ThemeProvider>
+         {/* </ThemeProvider> */}
       </>
    )
 }
@@ -28,7 +27,7 @@ export const NavBar = ({ getPokemons }) => {
 const Nav = styled.nav`
    display: flex;
    align-items: center;
-   background-color: theme.navBarBg;
+   /* background-color: ${({ theme }) => theme.navBarBg}; */
    width: 100%;
    height: 200px;
 `

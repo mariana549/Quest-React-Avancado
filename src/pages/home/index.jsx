@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import { GetData } from '../../components/pegarDados';
+import { GetPokedex } from '../../components/pokedex'
 
 export default function Home({setPokemonData}) {
   return (
     <>
-      <GetData setPokemonData={setPokemonData} />
+      <GetPokedex setPokemonData={setPokemonData} />
     </>
   )
 }

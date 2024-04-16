@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { themes } from '../../../public/themes';
 
@@ -12,10 +12,6 @@ export function ThemeProvider({ children }) {
       {children}
     </ThemeContext.Provider>
   );
-}
-
-export function useTheme() {
-  return useContext(ThemeContext);
 }
 
 ThemeProvider.propTypes = {

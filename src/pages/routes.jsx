@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./home"
-import { PokemonPerfil } from "./pokemonPerfil"
+import { Perfil } from "./profile"
 import { useState } from "react"
 
 function AppRoutes () {
@@ -8,7 +8,7 @@ function AppRoutes () {
    return (
       <Routes>
          <Route path="/" element={<Home setPokemonData={setPokemonData} />} />
-         <Route path="Perfil/:id" element={<PokemonPerfil pokemonData={pokemonData} />} />
+         <Route path="Perfil/:id" element={<Perfil pokemonData={pokemonData} />} />
       </Routes>
    )
 }
