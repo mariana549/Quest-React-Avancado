@@ -1,23 +1,33 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from "styled-components";
-// import { ThemeContext } from '../contexts/themeContext';
 
 export default function Card({ img, img2, name }) {
-   const [isImage1, setIsImage1] = useState(true);
+   const [isImage, setIsImage] = useState(true);
+   const [prevImage, setPrevImage] = useState(img);
 
-   // const { theme } = useContext(ThemeContext)
-   // console.log(theme); 
-
-   const handleMouseEnter = () => {
-      setIsImage1(!isImage1);
+   const toggleImage = () => {
+      setIsImage(!isImage);
    };
+
+   const timeoutDuration = 2500; 
+
+   useEffect(() => {
+      if (prevImage !== (isImage ? img : img2)) {
+         const timeout = setTimeout(() => {
+            setIsImage(true);
+            setPrevImage(img);
+         }, timeoutDuration);
+
+         return () => clearTimeout(timeout);
+      }
+   }, [isImage, img, img2, prevImage]);
 
    return (
       <Item>
          <NomePokemon>{name}</NomePokemon>
-         <div onMouseEnter={handleMouseEnter}>
-            <PokemonImage src={isImage1 ? img : img2} alt={name} />
+         <div onMouseEnter={toggleImage}>
+            <PokemonImage src={isImage ? img : img2} alt={name} />
          </div>
       </Item>
    );

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { GetPokedex } from '../../components/pokedex'
+import { GetPokedex } from '../../components/pokedex/getPokedex'
 
 export default function Home({setPokemonData}) {
   return (

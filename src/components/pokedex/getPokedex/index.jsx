@@ -1,11 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import Card from "./cards";
+import Card from "../cards";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PropTypes from 'prop-types';
-import { NavBar } from "../navBar";
-import { Button } from "../Button";
+import { NavBar } from "../../navBar";
+import { Button } from "../../Button";
 
 export const GetPokedex = ({ setPokemonData }) => {
    const [pokemons, setPokemon] = useState([])
@@ -62,10 +62,11 @@ export const GetPokedex = ({ setPokemonData }) => {
                      />
                   </Link>
                ))}
+
             </Lista>
 
             {pokemonsVisiveis < 1302 && (
-               <Button onClick={handlerShowMore}>Buscar Mais</Button>
+               <Button onClick={handlerShowMore} style={{background: "#437bff", padding: "10px", marginBotton: "10px", color: "white", borderRadius: "5px"}}>Buscar Mais</Button>
             )}
          </main>
       </>

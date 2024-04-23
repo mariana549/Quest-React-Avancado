@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
       list-style: none;
       text-decoration: none;
       font-family: "Roboto", sans-serif;
+      box-sizing: border-box;
    }
 
    body{

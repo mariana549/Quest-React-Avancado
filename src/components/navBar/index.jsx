@@ -1,27 +1,21 @@
 import styled from "styled-components"
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import { ThemeContext, ThemeProvider } from "../contexts/themeContext";
-import { ThemeToggleButton } from "../toggleThemeButton";
-import { useContext } from "react";
+import iconLogo from "../../assets/image/logo-icon.png"
+import logoPokemon from "../../assets/image/pokemon-logo.png"
 
 export const NavBar = ({ getPokemons }) => {
-   const { theme } = useContext(ThemeContext)
-
    return (
       <>
-         <ThemeProvider>
-            <Nav theme={theme}>
-               <Link to={"/"}>
-                  <IconLogo src="public/assets/image/logo-icon.png" alt="Logo-icon" />
-               </Link>
-               <Logo src="public/assets/image/pokemon-logo.png" alt="Logo" />
-               <ThemeToggleButton />
-               {getPokemons ? (
-                  <Pesquisar type="text" placeholder="Pesquisando...." className="pesquisando" onChange={e => getPokemons(e.target.value)} /> )
+         <Nav >
+            <Link to={"/"}>
+               <IconLogo src={iconLogo} alt="Logo-icon" />
+            </Link>
+            <Logo src={logoPokemon} alt="Logo" />
+            {getPokemons ? (
+               <Pesquisar type="text" placeholder="Pesquisando...." className="pesquisando" onChange={e => getPokemons(e.target.value)} />)
                : null}
-            </Nav>
-         </ThemeProvider>
+         </Nav>
       </>
    )
 }
@@ -29,9 +23,9 @@ export const NavBar = ({ getPokemons }) => {
 const Nav = styled.nav`
    display: flex;
    align-items: center;
-   background-color: ${({ theme }) => theme.navBarBg};
+   background-color: black;
    width: 100%;
-   height: 200px;
+   height: 170px;
 `
 
 const Pesquisar = styled.input`
