@@ -25,7 +25,7 @@ const Nav = styled.nav`
    align-items: center;
    background-color: black;
    width: 100%;
-   height: 170px;
+   height: 160px;
 `
 
 const Pesquisar = styled.input`
