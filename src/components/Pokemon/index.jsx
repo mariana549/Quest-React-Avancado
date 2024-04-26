@@ -29,7 +29,7 @@ export const Pokemon = ({ pokemonData }) => {
 
         <PerfilTitulo>#{pokemonData.id} {pokemonData.name}</PerfilTitulo>
 
-        <ImgContainer onMouserEnter={handleMouseEnter}>
+        <ImgContainer onClick={handleMouseEnter}>
           <Imagem src={isImage ? imagens.front : imagens.front_shiny} alt={pokemonData.name} />
 
           <ConteudoBox>
