@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import iconLogo from "../../assets/image/logo-icon.png"
 import logoPokemon from "../../assets/image/pokemon-logo.png"
 
-export const NavBar = ({ getPokemons }) => {
+export const NavBar = ({ getPokemons , getPokemonsTypes }) => {
    return (
       <>
          <Nav >
@@ -12,9 +12,33 @@ export const NavBar = ({ getPokemons }) => {
                <IconLogo src={iconLogo} alt="Logo-icon" />
             </Link>
             <Logo src={logoPokemon} alt="Logo" />
-            {getPokemons ? (
-               <Pesquisar type="text" placeholder="Pesquisando...." className="pesquisando" onChange={e => getPokemons(e.target.value)} />)
+            <div>
+               {getPokemons ? (
+                  <Pesquisar type="text" placeholder="Pesquisando...." className="pesquisando" onChange={e => getPokemons(e.target.value)} />)
+                  : null}
+               {getPokemonsTypes ? (
+               <SelectTypes value="types" onChange={e => getPokemonsTypes(e.target.value)}>
+                  <Option value="" />
+                  <Option value="bug">bug</Option>
+                  <Option value="dark">dark</Option>
+                  <Option value="dragon">dragon</Option>
+                  <Option value="eletric">eletric</Option>
+                  <Option value="fairy">fairy</Option>
+                  <Option value="fighting">fighting</Option>
+                  <Option value="fire">fire</Option>
+                  <Option value="flying">flying</Option>
+                  <Option value="ghost">ghost</Option>
+                  <Option value="ground">ground</Option>
+                  <Option value="ice">ice</Option>
+                  <Option value="normal">normal</Option>
+                  <Option value="poison">poison</Option>
+                  <Option value="psychic">psychic</Option>
+                  <Option value="rock">rock</Option>
+                  <Option value="steel">steel</Option>
+                  <Option value="water">water</Option>
+               </SelectTypes>)
                : null}
+            </div>
          </Nav>
       </>
    )
@@ -66,7 +90,7 @@ const IconLogo = styled.img`
 const Pesquisar = styled.input`
    background-color: #2e6db541;
    padding: 10px;
-   color: black;
+   color: white;
    border: solid 2px #2e6db5;
    border-radius: 10px;
 
@@ -83,6 +107,20 @@ const Pesquisar = styled.input`
    }
 `
 
+const SelectTypes = styled.select`
+   background-color: #2e6db541;
+   padding: 10px;
+   color: #ffcb05;
+   border: solid 2px #2e6db5;
+   border-radius: 10px;
+   margin-left: 5px;
+`
+
+const Option = styled.option`
+   background-color: #000000;
+`
+
 NavBar.propTypes = {
-   getPokemons: PropTypes.func.isRequired
+   getPokemons: PropTypes.func.isRequired,
+   getPokemonsTypes: PropTypes.any.isRequired
 }

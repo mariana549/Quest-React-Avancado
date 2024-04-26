@@ -41,21 +41,25 @@ export const GetPokedex = ({ setPokemonData }) => {
       setPokemonVisiveis(pokemonsVisiveis => pokemonsVisiveis + 10);
    }
 
-   const subirTopo = () => {
+   const goUpTop = () => {
       window.scrollTo(0, 0);
    }
 
    const getPokemons = (name) => {
       const filteredPokemons = pokemons.filter(pokemon =>
          pokemon.name.includes(name.toLowerCase()))
-      name ? setPokemon(filteredPokemons) : setPokemon(pokemons);
+      name ? setPokemon(filteredPokemons) : setPokemon(pokemons) 
    };
 
-
-
+   const getPokemonTypes = (type) => {
+      const filteredPokemons = pokemons.filter(pokemon => 
+         pokemon.types.map(type => type.type.name).includes(type))
+      type ? setPokemon(filteredPokemons) : setPokemon(pokemons)
+   }
+   
    return (
       <>
-         <NavBar getPokemons={getPokemons} />
+         <NavBar getPokemons={getPokemons} getPokemonsTypes={getPokemonTypes} />
 
          <main className="container box">
             <Lista>
@@ -82,7 +86,7 @@ export const GetPokedex = ({ setPokemonData }) => {
             )}
 
             {pokemonsVisiveis > 1301 && (
-               <Button onClick={subirTopo} style={{ background: "black", padding: "10px", margin: "10px", color: "white", borderRadius: "5px"}}>Subir para o topo</Button>
+               <Button onClick={goUpTop} style={{ background: "black", padding: "10px", margin: "10px", color: "white", borderRadius: "5px"}}>Subir para o topo</Button>
             )}
          </main>
       </>
