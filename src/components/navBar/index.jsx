@@ -114,6 +114,14 @@ const SelectTypes = styled.select`
    border: solid 2px #2e6db5;
    border-radius: 10px;
    margin-left: 5px;
+
+   @media (max-width: 1200px) {
+   width: 50px;
+   }
+
+   @media (max-width: 768px) {
+      width: 20px;
+   }
 `
 
 const Option = styled.option`

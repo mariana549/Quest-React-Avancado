@@ -70,7 +70,7 @@ const Main = styled.main`
   display: grid;
   padding: 20px 0px;
   margin-top: 20px;
-  border: solid 10px #FFCB05;
+  border: solid 8px #FFCB05;
   border-radius: 25px;
   background-color: #010101c7;
 
