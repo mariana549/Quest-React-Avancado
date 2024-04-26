@@ -10,6 +10,7 @@ import { Button } from "../../Button";
 export const GetPokedex = ({ setPokemonData }) => {
    const [pokemons, setPokemon] = useState([])
    const [pokemonsVisiveis, setPokemonVisiveis] = useState(10)
+   const [loading, setLoading] = useState(true);
 
    const axiosData = async () => {
       try {
@@ -26,6 +27,7 @@ export const GetPokedex = ({ setPokemonData }) => {
          const data = responses.map((response) => response.data)
 
          setPokemon(data)
+         setLoading(false)
       } catch (error) {
          console.error(`Error fetching Pokemon API: ${error.message}`)
       }
@@ -39,8 +41,12 @@ export const GetPokedex = ({ setPokemonData }) => {
       setPokemonVisiveis(pokemonsVisiveis => pokemonsVisiveis + 10);
    }
 
+   const subirTopo = () => {
+      window.scrollTo(0, 0);
+   }
+
    const getPokemons = (name) => {
-      const filteredPokemons = pokemons.filter(pokemon =>  
+      const filteredPokemons = pokemons.filter(pokemon =>
          pokemon.name.includes(name.toLowerCase()))
       name ? setPokemon(filteredPokemons) : setPokemon(pokemons);
    };
@@ -53,21 +59,30 @@ export const GetPokedex = ({ setPokemonData }) => {
 
          <main className="container box">
             <Lista>
-               {pokemons.slice(0, pokemonsVisiveis).map((pokemon, index) => (
-                  <Link to={`/Perfil/${pokemon.name}`} onClick={() => setPokemonData(pokemon)} key={index}>
-                     <Card 
-                     img={pokemon.sprites.front_default}
-                     img2={pokemon.sprites.back_default}
-                     name={pokemon.name} 
-                     types={pokemon.types}
-                     />
-                  </Link>
-               ))}
+               {loading ?
+                  <div style={{display: "flex", flexWrap: "wrap"}}>
+                     <Carregando /> <Carregando /> <Carregando /> <Carregando /> <Carregando /> <Carregando />
+                  </div>
+
+                  : pokemons.slice(0, pokemonsVisiveis).map((pokemon, index) => (
+                     <Link to={`/Perfil/${pokemon.name}`} onClick={() => setPokemonData(pokemon)} key={index}>
+                        <Card
+                           img={pokemon.sprites.front_default}
+                           img2={pokemon.sprites.back_default}
+                           name={pokemon.name}
+                           types={pokemon.types}
+                        />
+                     </Link>
+                  ))}
 
             </Lista>
 
-            {pokemonsVisiveis < 1302 && (
-               <Button onClick={handlerShowMore} style={{background: "#437bff", padding: "10px", marginBotton: "10px", color: "white", borderRadius: "5px"}}>Buscar Mais</Button>
+            {pokemonsVisiveis < 1303 && (
+               <Button onClick={handlerShowMore} style={{ background: "#437bff", padding: "10px", margin: "10px", color: "white", borderRadius: "5px" }}>Buscar Mais</Button>
+            )}
+
+            {pokemonsVisiveis > 1301 && (
+               <Button onClick={subirTopo} style={{ background: "black", padding: "10px", margin: "10px", color: "white", borderRadius: "5px" }}>Subir para o topo</Button>
             )}
          </main>
       </>
@@ -79,6 +94,14 @@ const Lista = styled.ul`
    flex-wrap: wrap;
    width: 100%;
    gap: 15px;
+`
+
+const Carregando = styled.div`
+   width: 300px;
+   height: 150px;
+   background: #c4c4c420;
+   border-radius: 20px;
+   margin: 30px;
 `
 
 GetPokedex.propTypes = {

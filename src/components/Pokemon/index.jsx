@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
 export const Pokemon = ({ pokemonData }) => {
+  console.log("pokemon", pokemonData)
   const [isImage, setIsImage] = useState(true);
 
   const imagens = {
@@ -24,6 +25,11 @@ export const Pokemon = ({ pokemonData }) => {
 
   return (
     <>
+
+      <div><p style={{font: "50px", background: "green"}}>volte ao menu anterior</p></div>
+
+      {pokemonData === undefined ? <div>aa</div> :
+      
       <Main className='container'>
         <Link to={"/"}><Voltar>Retornar</Voltar></Link>
 
@@ -62,6 +68,7 @@ export const Pokemon = ({ pokemonData }) => {
           </List>
         </Dados>
       </Main>
+    }
     </>
   )
 }
