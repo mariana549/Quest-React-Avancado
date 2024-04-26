@@ -59,6 +59,7 @@ export const GetPokedex = ({ setPokemonData }) => {
                      img={pokemon.sprites.front_default}
                      img2={pokemon.sprites.back_default}
                      name={pokemon.name} 
+                     types={pokemon.types}
                      />
                   </Link>
                ))}

@@ -78,13 +78,19 @@ const Voltar = styled.p`
   color: #ffcd05cf;
   font-size: 1.25rem;
   font-weight: bold;
+
+  &:hover {
+    /* background-color: #ffcd05cf; */
+    color: white;
+    text-shadow: 0px 0px 10px #ffcd05cf;
+}
 `
 const ImgContainer = styled.div`
   text-align: center;
   width: 95%;
   border: solid 5px #ffcd05cf;
   border-radius: 0px 0px 35px 35px;
-  background-color: white;
+  background-color: #ededed;
 `
 const ConteudoBox = styled.div`
   display: flex;
@@ -108,7 +114,7 @@ const TypesList = styled.ul`
 const Tipo = styled.li`
   font-weight: 500;
   color: #fff;
-  background-color: #5b5d5f48;
+  background-color: #191a1a47;
   font-size: 20px;
   padding: 5px;
   border: solid 2px #fff;
@@ -149,6 +155,7 @@ const Li = styled.li`
   border-radius: 10px;
   padding: 6px;
   text-align: center;
+  cursor: default;
 `
 
 Pokemon.propTypes = {

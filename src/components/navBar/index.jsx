@@ -26,6 +26,7 @@ const Nav = styled.nav`
    background-color: black;
    width: 100%;
    height: 160px;
+   box-shadow: 0px 5px 8px #000000a3;
 `
 
 const Pesquisar = styled.input`
