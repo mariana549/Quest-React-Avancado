@@ -89,5 +89,5 @@ Card.propTypes = {
    img: PropTypes.string.isRequired,
    img2: PropTypes.string.isRequired,
    name: PropTypes.string.isRequired,
-   types: PropTypes.string.isRequired
+   types: PropTypes.any.isRequired
 };

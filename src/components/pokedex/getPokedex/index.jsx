@@ -78,11 +78,11 @@ export const GetPokedex = ({ setPokemonData }) => {
             </Lista>
 
             {pokemonsVisiveis < 1303 && (
-               <Button onClick={handlerShowMore} style={{ background: "#437bff", padding: "10px", margin: "10px", color: "white", borderRadius: "5px" }}>Buscar Mais</Button>
+               <Button onClick={handlerShowMore} style={{ background: "#437bff", padding: "10px", margin: "10px", color: "white", borderRadius: "5px"}}>Buscar Mais</Button>
             )}
 
             {pokemonsVisiveis > 1301 && (
-               <Button onClick={subirTopo} style={{ background: "black", padding: "10px", margin: "10px", color: "white", borderRadius: "5px" }}>Subir para o topo</Button>
+               <Button onClick={subirTopo} style={{ background: "black", padding: "10px", margin: "10px", color: "white", borderRadius: "5px"}}>Subir para o topo</Button>
             )}
          </main>
       </>

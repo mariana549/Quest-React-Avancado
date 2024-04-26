@@ -29,23 +29,20 @@ const Nav = styled.nav`
    box-shadow: 0px 5px 8px #000000a3;
 `
 
-const Pesquisar = styled.input`
-   background-color: #2e6db541;
-   padding: 10px;
-   color: black;
-   border: solid 2px #2e6db5;
-   border-radius: 10px;
-
-   &:hover {
-      box-shadow: 1px 1px 10px #FFCB05;
-   }
-`
 const Logo = styled.img`
    width: 300px;
    transition: transform 0.3s ease; 
 
    &:hover {
       transform: translateY(-10px);
+   }
+
+   @media (max-width: 1200px) {
+      width: 250px;
+   }
+
+   @media (max-width: 768px) {
+      width: 200px;
    }
 `
 
@@ -56,8 +53,35 @@ const IconLogo = styled.img`
    &:hover {
       transform: rotate(360deg)
    }
-`;
 
+   @media (max-width: 1200px) {
+      width: 100px;
+   }
+
+   @media (max-width: 768px) {
+      width: 80px;
+   }
+`
+
+const Pesquisar = styled.input`
+   background-color: #2e6db541;
+   padding: 10px;
+   color: black;
+   border: solid 2px #2e6db5;
+   border-radius: 10px;
+
+   &:hover {
+      box-shadow: 1px 1px 10px #FFCB05;
+   }
+
+   @media (max-width: 1200px) {
+   width: 140px;
+   }
+
+   @media (max-width: 768px) {
+      width: 110px;
+   }
+`
 
 NavBar.propTypes = {
    getPokemons: PropTypes.func.isRequired

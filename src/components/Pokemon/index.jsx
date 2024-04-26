@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
 export const Pokemon = ({ pokemonData }) => {
-  console.log("pokemon", pokemonData)
   const [isImage, setIsImage] = useState(true);
 
   const imagens = {
@@ -25,11 +24,6 @@ export const Pokemon = ({ pokemonData }) => {
 
   return (
     <>
-
-      <div><p style={{font: "50px", background: "green"}}>volte ao menu anterior</p></div>
-
-      {pokemonData === undefined ? <div>aa</div> :
-      
       <Main className='container'>
         <Link to={"/"}><Voltar>Retornar</Voltar></Link>
 
@@ -68,7 +62,6 @@ export const Pokemon = ({ pokemonData }) => {
           </List>
         </Dados>
       </Main>
-    }
     </>
   )
 }
@@ -80,6 +73,10 @@ const Main = styled.main`
   border: solid 10px #FFCB05;
   border-radius: 25px;
   background-color: #010101c7;
+
+  @media (max-width: 1200px) {
+    margin: 20px;
+  }
 `
 const Voltar = styled.p`
   color: #ffcd05cf;
@@ -99,6 +96,19 @@ const ImgContainer = styled.div`
   border-radius: 0px 0px 35px 35px;
   background-color: #ededed;
 `
+
+const Imagem = styled.img`
+  width: 550px;
+
+  @media (max-width: 1200px) {
+      width: 400px;
+   }
+
+   @media (max-width: 768px) {
+      width: 300px;
+   }
+`
+
 const ConteudoBox = styled.div`
   display: flex;
   padding: 10px 0px;
@@ -111,6 +121,10 @@ const PerfilTitulo = styled.h1`
   color: #FFCB05;
   font-weight: bold;
   padding: 10px ;
+
+  @media (max-width: 768px){
+    font-size: 1.65rem;
+  }
 `
 const TypesList = styled.ul`
   display: flex;
@@ -127,16 +141,20 @@ const Tipo = styled.li`
   border: solid 2px #fff;
   border-radius: 5px;
   text-transform: capitalize;
+
+  @media (max-width: 768px){
+    font-size: 1rem;
+  }
   `
 const VersaoPokemon = styled.p`
   color: #000;
   font-size: 1.25rem;
   font-weight: bold;
   align-self: center;
-`
-const Imagem = styled.img`
-  width: 550px;
 
+  @media (max-width: 768px){
+    font-size: 1rem;
+  }
 `
 
 const Dados = styled.div`
@@ -148,6 +166,10 @@ const H3 = styled.h3`
   color: #ffcd05cf;
   font-size: 2rem;
   padding-bottom: 10px;
+
+  @media (max-width: 768px){
+    font-size: 1.45rem;
+  }
 `
 const List = styled.ul`
   display: flex;
@@ -163,6 +185,10 @@ const Li = styled.li`
   padding: 6px;
   text-align: center;
   cursor: default;
+
+  @media (max-width: 768px){
+    font-size: 0.85rem;
+  }
 `
 
 Pokemon.propTypes = {
