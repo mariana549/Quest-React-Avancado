@@ -11,6 +11,10 @@ export const Perfil = ({ pokemonData }) => {
   )
 } 
 
+Perfil.defaultProps = {
+  pokemonData: {} 
+};
+
 Perfil.propTypes = {
   pokemonData: PropTypes.any.isRequired
 }
