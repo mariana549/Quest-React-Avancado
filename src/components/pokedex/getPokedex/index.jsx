@@ -15,7 +15,7 @@ export const GetPokedex = ({ setPokemonData }) => {
    const axiosData = async () => {
       try {
          const urls = [];
-         const baseUrl = `https://pokeapi.co/api/v2/pokemon?limit=200&offset=0`
+         const baseUrl = `https://pokeapi.co/api/v2/pokemon?limit=500&offset=0`
          const response = await axios.get(`${baseUrl}`)
          const results = response.data.results
 
@@ -86,7 +86,7 @@ export const GetPokedex = ({ setPokemonData }) => {
             )}
 
             {pokemonsVisiveis > 499 && (
-               <Button onClick={goUpTop}/>
+               <Button onClick={goUpTop}>Subir para Topo</Button>
             )}
          </main>
       </>

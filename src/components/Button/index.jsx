@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
 const Button = (props) => {
-   const { padding, marginTop, color, borderRadius, background, cursor, label } = props;
-   return <button {...props} style={{padding, marginTop, color, borderRadius, background: background, cursor}}>{label}</button>;
+   const { padding, marginTop, color, borderRadius, background, cursor } = props;
+   return <button {...props} style={{padding, marginTop, color, borderRadius, background: background, cursor}}/>
 };
 
 Button.defaultProps = {
@@ -12,7 +12,6 @@ Button.defaultProps = {
    borderRadius: "5px",
    background: "black",
    cursor: "pointer",
-   label: "Subir ao Topo"
 };
 
 Button.propTypes = {
@@ -22,7 +21,6 @@ Button.propTypes = {
    borderRadius: PropTypes.string.isRequired,
    background: PropTypes.string.isRequired,
    cursor: PropTypes.string.isRequired,
-   label: PropTypes.string.isRequired
 }
 
 export { Button };
