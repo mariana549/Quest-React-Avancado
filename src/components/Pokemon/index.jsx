@@ -99,6 +99,7 @@ const ImgContainer = styled.div`
 
 const Imagem = styled.img`
   width: 550px;
+  cursor: pointer;
 
   @media (max-width: 1200px) {
       width: 400px;

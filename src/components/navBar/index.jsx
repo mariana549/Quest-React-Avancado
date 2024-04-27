@@ -22,7 +22,7 @@ export const NavBar = ({ getPokemons , getPokemonsTypes }) => {
                   <Option value="bug">bug</Option>
                   <Option value="dark">dark</Option>
                   <Option value="dragon">dragon</Option>
-                  <Option value="eletric">eletric</Option>
+                  <Option value="electric">electric</Option>
                   <Option value="fairy">fairy</Option>
                   <Option value="fighting">fighting</Option>
                   <Option value="fire">fire</Option>
@@ -118,6 +118,7 @@ const SelectTypes = styled.select`
    border: solid 2px #2e6db5;
    border-radius: 10px;
    margin-left: 5px;
+   cursor: pointer;
 
    @media (max-width: 1200px) {
    width: 50px;
@@ -130,6 +131,7 @@ const SelectTypes = styled.select`
 
 const Option = styled.option`
    background-color: #000000;
+   cursor: pointer;
 `
 
 NavBar.propTypes = {

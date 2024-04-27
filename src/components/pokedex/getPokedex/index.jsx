@@ -15,7 +15,7 @@ export const GetPokedex = ({ setPokemonData }) => {
    const axiosData = async () => {
       try {
          const urls = [];
-         const baseUrl = `https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`
+         const baseUrl = `https://pokeapi.co/api/v2/pokemon?limit=200&offset=0`
          const response = await axios.get(`${baseUrl}`)
          const results = response.data.results
 
@@ -48,15 +48,15 @@ export const GetPokedex = ({ setPokemonData }) => {
    const getPokemons = (name) => {
       const filteredPokemons = pokemons.filter(pokemon =>
          pokemon.name.includes(name.toLowerCase()))
-         name ? setPokemon(filteredPokemons) : setPokemon(pokemons)
+      name ? setPokemon(filteredPokemons) : setPokemon(pokemons)
    };
 
    const getPokemonTypes = (type) => {
-      const filteredPokemons = pokemons.filter(pokemon => 
+      const filteredPokemons = pokemons.filter(pokemon =>
          pokemon.types.map(e => e.type.name).includes(type))
       type ? setPokemon(filteredPokemons) : setPokemon(pokemons)
    }
-   
+
    return (
       <>
          <NavBar getPokemons={getPokemons} getPokemonsTypes={getPokemonTypes} />
@@ -64,7 +64,7 @@ export const GetPokedex = ({ setPokemonData }) => {
          <main className="container box">
             <Lista>
                {loading ?
-                  <div style={{display: "flex", flexWrap: "wrap"}}>
+                  <div style={{ display: "flex", flexWrap: "wrap" }}>
                      <Carregando /> <Carregando /> <Carregando /> <Carregando /> <Carregando /> <Carregando />
                   </div>
 
@@ -82,11 +82,11 @@ export const GetPokedex = ({ setPokemonData }) => {
             </Lista>
 
             {pokemonsVisiveis < 1303 && (
-               <Button onClick={handlerShowMore} style={{ background: "#437bff", padding: "10px", marginTop: "5px", color: "white", borderRadius: "5px"}}>Buscar Mais</Button>
+               <Button onClick={handlerShowMore} background="#437bff">Buscar Mais</Button>
             )}
 
             {pokemonsVisiveis > 1301 && (
-               <Button onClick={goUpTop} style={{ background: "black", padding: "10px", marginTop: "5px", color: "white", borderRadius: "5px"}}>Subir para o topo</Button>
+               <Button onClick={goUpTop}/>
             )}
          </main>
       </>
