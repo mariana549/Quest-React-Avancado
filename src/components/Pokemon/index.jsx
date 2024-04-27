@@ -84,7 +84,6 @@ const Voltar = styled.p`
   font-weight: bold;
 
   &:hover {
-    /* background-color: #ffcd05cf; */
     color: white;
     text-shadow: 0px 0px 10px #ffcd05cf;
 }
