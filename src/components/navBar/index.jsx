@@ -68,6 +68,10 @@ const Logo = styled.img`
    @media (max-width: 768px) {
       width: 200px;
    }
+
+   @media (max-width: 500px) {
+      display: none;
+   }
 `
 
 const IconLogo = styled.img`
