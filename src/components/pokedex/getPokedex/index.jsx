@@ -48,12 +48,12 @@ export const GetPokedex = ({ setPokemonData }) => {
    const getPokemons = (name) => {
       const filteredPokemons = pokemons.filter(pokemon =>
          pokemon.name.includes(name.toLowerCase()))
-      name ? setPokemon(filteredPokemons) : setPokemon(pokemons) 
+         name ? setPokemon(filteredPokemons) : setPokemon(pokemons)
    };
 
    const getPokemonTypes = (type) => {
       const filteredPokemons = pokemons.filter(pokemon => 
-         pokemon.types.map(type => type.type.name).includes(type))
+         pokemon.types.map(e => e.type.name).includes(type))
       type ? setPokemon(filteredPokemons) : setPokemon(pokemons)
    }
    
@@ -82,11 +82,11 @@ export const GetPokedex = ({ setPokemonData }) => {
             </Lista>
 
             {pokemonsVisiveis < 1303 && (
-               <Button onClick={handlerShowMore} style={{ background: "#437bff", padding: "10px", margin: "10px", color: "white", borderRadius: "5px"}}>Buscar Mais</Button>
+               <Button onClick={handlerShowMore} style={{ background: "#437bff", padding: "10px", marginTop: "5px", color: "white", borderRadius: "5px"}}>Buscar Mais</Button>
             )}
 
             {pokemonsVisiveis > 1301 && (
-               <Button onClick={goUpTop} style={{ background: "black", padding: "10px", margin: "10px", color: "white", borderRadius: "5px"}}>Subir para o topo</Button>
+               <Button onClick={goUpTop} style={{ background: "black", padding: "10px", marginTop: "5px", color: "white", borderRadius: "5px"}}>Subir para o topo</Button>
             )}
          </main>
       </>

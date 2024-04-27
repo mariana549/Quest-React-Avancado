@@ -14,7 +14,7 @@ export const NavBar = ({ getPokemons , getPokemonsTypes }) => {
             <Logo src={logoPokemon} alt="Logo" />
             <div>
                {getPokemons ? (
-                  <Pesquisar type="text" placeholder="Pesquisando...." className="pesquisando" onChange={e => getPokemons(e.target.value)} />)
+                  <Pesquisar placeholder="Pesquisando...." className="pesquisando" onChange={e => getPokemons(e.target.value)} />)
                   : null}
                {getPokemonsTypes ? (
                <SelectTypes value="types" onChange={e => getPokemonsTypes(e.target.value)}>
