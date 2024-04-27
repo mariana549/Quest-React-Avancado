@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import iconLogo from "../../assets/image/logo-icon.png"
 import logoPokemon from "../../assets/image/pokemon-logo.png"
 
-export const NavBar = ({ getPokemons , getPokemonsTypes }) => {
+export const NavBar = ({ getPokemons, getPokemonsTypes }) => {
    return (
       <>
          <Nav >
@@ -17,27 +17,27 @@ export const NavBar = ({ getPokemons , getPokemonsTypes }) => {
                   <Pesquisar placeholder="Pesquisando...." className="pesquisando" onChange={e => getPokemons(e.target.value)} />)
                   : null}
                {getPokemonsTypes ? (
-               <SelectTypes value="types" onChange={e => getPokemonsTypes(e.target.value)}>
-                  <Option value="" />
-                  <Option value="bug">bug</Option>
-                  <Option value="dark">dark</Option>
-                  <Option value="dragon">dragon</Option>
-                  <Option value="electric">electric</Option>
-                  <Option value="fairy">fairy</Option>
-                  <Option value="fighting">fighting</Option>
-                  <Option value="fire">fire</Option>
-                  <Option value="flying">flying</Option>
-                  <Option value="ghost">ghost</Option>
-                  <Option value="ground">ground</Option>
-                  <Option value="ice">ice</Option>
-                  <Option value="normal">normal</Option>
-                  <Option value="poison">poison</Option>
-                  <Option value="psychic">psychic</Option>
-                  <Option value="rock">rock</Option>
-                  <Option value="steel">steel</Option>
-                  <Option value="water">water</Option>
-               </SelectTypes>)
-               : null}
+                  <SelectTypes value="types" onChange={e => getPokemonsTypes(e.target.value)}>
+                     <Option value="" />
+                     <Option value="bug">bug</Option>
+                     <Option value="dark">dark</Option>
+                     <Option value="dragon">dragon</Option>
+                     <Option value="electric">electric</Option>
+                     <Option value="fairy">fairy</Option>
+                     <Option value="fighting">fighting</Option>
+                     <Option value="fire">fire</Option>
+                     <Option value="flying">flying</Option>
+                     <Option value="ghost">ghost</Option>
+                     <Option value="ground">ground</Option>
+                     <Option value="ice">ice</Option>
+                     <Option value="normal">normal</Option>
+                     <Option value="poison">poison</Option>
+                     <Option value="psychic">psychic</Option>
+                     <Option value="rock">rock</Option>
+                     <Option value="steel">steel</Option>
+                     <Option value="water">water</Option>
+                  </SelectTypes>)
+                  : null}
             </div>
          </Nav>
       </>
@@ -56,7 +56,7 @@ const Nav = styled.nav`
 const Logo = styled.img`
    width: 300px;
    transition: transform 0.3s ease; 
-
+   
    &:hover {
       transform: translateY(-10px);
    }

@@ -64,9 +64,9 @@ export const GetPokedex = ({ setPokemonData }) => {
          <main className="container box">
             <Lista>
                {loading ?
-                  <div style={{ display: "flex", flexWrap: "wrap" }}>
+                  <Box>
                      <Carregando /> <Carregando /> <Carregando /> <Carregando /> <Carregando /> <Carregando />
-                  </div>
+                  </Box>
 
                   : pokemons.slice(0, pokemonsVisiveis).map((pokemon, index) => (
                      <Link to={`/Perfil/${pokemon.name}`} onClick={() => setPokemonData(pokemon)} key={index}>
@@ -81,11 +81,11 @@ export const GetPokedex = ({ setPokemonData }) => {
 
             </Lista>
 
-            {pokemonsVisiveis < 1303 && (
+            {pokemonsVisiveis < 501 && (
                <Button onClick={handlerShowMore} background="#437bff">Buscar Mais</Button>
             )}
 
-            {pokemonsVisiveis > 1301 && (
+            {pokemonsVisiveis > 499 && (
                <Button onClick={goUpTop}/>
             )}
          </main>
@@ -106,6 +106,24 @@ const Carregando = styled.div`
    background: #c4c4c420;
    border-radius: 20px;
    margin: 30px;
+`
+
+const Box = styled.div`
+   display: flex;
+   flex-wrap: wrap;
+   position: relative;
+   animation: flutuar 1s infinite alternate ease-in-out;
+
+  @keyframes flutuar {
+      0% {
+         /* transform: translateY(0); */
+         opacity: 1;
+      }
+      100% {
+         /* transform: translateY(-10px); */
+         opacity: 0;
+      }
+   }
 `
 
 GetPokedex.propTypes = {
