@@ -60,7 +60,7 @@ O objetivo deste projeto é utilizar a [pokeApi](https://pokeapi.co/) para obter
 
 Este projeto usa os seguintes recursos:
 
-   - **API do pokeApi**: Essa API é utilizada para obter os dados dos pokemons, como imagens, nomes, movimentos, habilidades e tipos.
+   - **API do pokeApi**: Essa API é utilizada para obter os dados dos pokemons, como imagens, nomes, movimentos, habilidades, tipos e etc.
    - **React.js**: O React é uma biblioteca JavaScript para construção de interfaces de usuário. Ele é utilizado neste projeto para o desenvolvimento da aplicação web.
    - **Styled-components**: Essa biblioteca permite estilizar os componentes React de forma mais dinâmica e modular. Com ela, é possível criar estilos diretamente no código JavaScript.
    - **React-router-dom**: Essa biblioteca é utilizada para a navegação entre as páginas da aplicação. Ela permite criar rotas e gerenciar a transição entre diferentes telas.
@@ -83,6 +83,8 @@ Este projeto usa os seguintes recursos:
 5. **Filtrar Pokemons por Tipo**: Também na barra de navegação, incluí uma seção onde o usuário pode selecionar o tipo do pokemon desejado. Ao escolher um tipo, a lista de pokemons é filtrada de acordo.
 
 6. **Troca Automática de Imagem para Versão Shinny**: No perfil do pokemon, adicionei uma funcionalidade que troca automaticamente a imagem do pokemon de versão normal para shinny. Essa troca é clicável, permitindo alternar manualmente entre as versões.
+
+7. **Movimentos e habilidades**: adicionei as habilidades com o nome e descrição, e os movimentos em ordem alfabetica.
 
 
 ## Imagens 📷

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import { HabilitiePokemon } from './habilities';
 
 export const Pokemon = ({ pokemonData }) => {
   const [isImage, setIsImage] = useState(true);
@@ -47,7 +48,7 @@ export const Pokemon = ({ pokemonData }) => {
           <div>
             <List>
               {pokemonData.abilities.map((dados, i) => (
-                <Li key={i}> {dados.ability.name} </Li>
+                <HabilitiePokemon key={i} url={dados.ability.url} name={dados.ability.name} />
               ))}
             </List>
           </div>
@@ -56,9 +57,12 @@ export const Pokemon = ({ pokemonData }) => {
         <Dados className='box'>
           <H3>Movimentos: </H3>
           <List>
-            {pokemonData.moves.map((movimento, i) => (
-              <Li key={i}>{movimento.move.name}</Li>
-            ))}
+            {pokemonData.moves
+              .map((movimento) => movimento.move.name)
+              .sort((a, b) => a.localeCompare(b))
+              .map((nomeMovimento, i) => (
+                <Li key={i}>{nomeMovimento}</Li>
+              ))}
           </List>
         </Dados>
       </Main>
