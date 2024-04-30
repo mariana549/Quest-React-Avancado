@@ -101,9 +101,9 @@ A seguir, você pode ver algumas capturas de tela e um Gif do projeto em funcion
 
 - Imagem 2: perfil pokemon `Bubassauro`.
 
-![](./src/capturas/Captura%20de%20tela%202024-02-20%20151129.png)
+![](./public/images/perfilPokemon.png)
 
 - Gif 2: perfil do `Bubassauro`
 
-![]()
+![](./public/images/pokemonPerfil.gif)
 
