@@ -7,11 +7,14 @@ import { ConteudoBox, Dados, H3, Imagem, ImgContainer, Li, List, Main, PerfilTit
 export const Pokemon = ({ pokemonData }) => {
   console.log(pokemonData, "pokemon")
   const [isImage, setIsImage] = useState(true);
+  // const [ability, setAbility] = useState();
 
   const imagens = {
     front: pokemonData.sprites.front_default,
     front_shiny: pokemonData.sprites.front_shiny,
   }
+
+
 
   const handleMouseEnter = () => {
     setIsImage(!isImage);

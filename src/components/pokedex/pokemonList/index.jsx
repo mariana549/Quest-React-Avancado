@@ -7,7 +7,7 @@ import { NavBar } from "../../navBar";
 import { Button } from "../../pokeButton";
 import { Box, Carregando, Lista } from "./styledPokemonList";
 
-export const GetPokedex = ({ setPokemonData }) => {
+export const PokemonList = ({ setPokemonData }) => {
    const [pokemons, setPokemon] = useState([])
    console.log(pokemons, "pokemons")
    const [pokemonsVisiveis, setPokemonVisiveis] = useState(10)
@@ -94,7 +94,7 @@ export const GetPokedex = ({ setPokemonData }) => {
    )
 }
 
-GetPokedex.propTypes = {
+PokemonList.propTypes = {
    setPokemonData: PropTypes.func.isRequired
 };
 
