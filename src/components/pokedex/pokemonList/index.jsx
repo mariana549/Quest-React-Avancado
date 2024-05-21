@@ -2,10 +2,10 @@ import axios from "axios"
 import { useEffect, useState } from "react";
 import Card from "../pokeCards";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 import PropTypes from 'prop-types';
 import { NavBar } from "../../navBar";
 import { Button } from "../../pokeButton";
+import { Box, Carregando, Lista } from "./styledPokemonList";
 
 export const GetPokedex = ({ setPokemonData }) => {
    const [pokemons, setPokemon] = useState([])
@@ -93,37 +93,6 @@ export const GetPokedex = ({ setPokemonData }) => {
       </>
    )
 }
-
-const Lista = styled.ul`
-   display: flex;
-   flex-wrap: wrap;
-   width: 100%;
-   gap: 15px;
-`
-
-const Carregando = styled.div`
-   width: 300px;
-   height: 150px;
-   background: #c4c4c420;
-   border-radius: 20px;
-   margin: 30px;
-`
-
-const Box = styled.div`
-   display: flex;
-   flex-wrap: wrap;
-   position: relative;
-   animation: flutuar 1s infinite alternate ease-in-out;
-
-  @keyframes flutuar {
-      0% {
-         opacity: 1;
-      }
-      100% {
-         opacity: 0;
-      }
-   }
-`
 
 GetPokedex.propTypes = {
    setPokemonData: PropTypes.func.isRequired
