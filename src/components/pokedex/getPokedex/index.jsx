@@ -1,21 +1,22 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import Card from "../cards";
+import Card from "../pokeCards";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PropTypes from 'prop-types';
 import { NavBar } from "../../navBar";
-import { Button } from "../../Button";
+import { Button } from "../../pokeButton";
 
 export const GetPokedex = ({ setPokemonData }) => {
    const [pokemons, setPokemon] = useState([])
+   console.log(pokemons, "pokemons")
    const [pokemonsVisiveis, setPokemonVisiveis] = useState(10)
    const [loading, setLoading] = useState(true);
 
    const axiosData = async () => {
       try {
          const urls = [];
-         const baseUrl = `https://pokeapi.co/api/v2/pokemon?limit=500&offset=0`
+         const baseUrl = `https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`
          const response = await axios.get(`${baseUrl}`)
          const results = response.data.results
 

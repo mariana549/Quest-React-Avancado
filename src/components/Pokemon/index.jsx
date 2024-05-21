@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { HabilitiePokemon } from './habilities';
 
 export const Pokemon = ({ pokemonData }) => {
+  console.log(pokemonData, "pokemon")
   const [isImage, setIsImage] = useState(true);
 
   const imagens = {

@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import styled from "styled-components";
+import PropTypes from 'prop-types'
+import { Box, Item, NomePokemon, PokemonImage, Tipo, TypesList } from './styledCards';
 
 export default function Card({ img, img2, name, types }) {
    const [isImage, setIsImage] = useState(true);
@@ -39,51 +39,6 @@ export default function Card({ img, img2, name, types }) {
       </Item>
    );
 }
-
-const Item = styled.li`
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   width: 300px;
-   height: 150px;
-   background: #000000a9;
-   border: solid 2px #fff;
-   border-radius: 20px;
-   transition: transform 0.3s ease;
-
-   &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 0px 10px white;
-   }
-`;
-
-const PokemonImage = styled.img`
-   width: 150px;
-   height: 150px;
-   margin: 0;
-   transition: transform 0.5s ease;
-`;
-
-const Box = styled.div`
-   padding-left: 10px;
-`
-
-const NomePokemon = styled.h2`
-   font-size: 25px;
-   color: #fff;
-   text-transform: capitalize;
-`;
-
-const TypesList = styled.ul`
-   display: flex;
-   padding-top: 10px;
-`
-
-const Tipo = styled.li`
-   color: #959594;
-   font-weight: bold;
-   font-size: 14px;
-`
 
 Card.propTypes = {
    img: PropTypes.string.isRequired,

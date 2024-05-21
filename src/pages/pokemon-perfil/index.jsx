@@ -3,6 +3,7 @@ import { Pokemon } from '../../components/Pokemon';
 import { NavBar } from '../../components/navBar';
 
 export const Perfil = ({ pokemonData }) => {
+  console.log(pokemonData, "perfil")
   return (
     <>
       <NavBar />
