@@ -1,21 +1,29 @@
 import styled from "styled-components"
 
-export const Nav = styled.nav`
+export const Header = styled.nav`
    display: flex;
    align-items: center;
    background: black;
-   height: 150px;
-`
+   height: 400px;
+   padding: 15px;
+   `
 
 export const Div = styled.div`
    display: flex;
+   flex-direction: column;
+   gap: 40px;
    align-items: center;
-   justify-content: space-between;
    width: 100%;
 `
 
+export const Box = styled.div`
+   display: flex;
+   gap: 5px;
+   align-items: center;
+`
+
 export const Logo = styled.img`
-   width: 300px;
+   width: 370px;
    transition: transform 0.3s ease; 
    opacity: 200%;
    

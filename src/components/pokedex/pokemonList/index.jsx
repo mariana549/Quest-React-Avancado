@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "../pokeCards";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-import { NavBar } from "../../pokeNavBar";
+import { NavBar } from "../../pokeHeader";
 import { Button } from "../../pokeButton";
 import { Box, Carregando, Lista } from "./styledPokemonList";
 import Provider from "../../../contexts/pokeDados/Provider";
