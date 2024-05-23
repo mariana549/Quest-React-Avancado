@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Pokemon } from '../../components/Pokemon';
-import { NavBar } from '../../components/navBar';
+import { NavBar } from '../../components/pokeNavBar';
 
 export const Perfil = ({ pokemonData }) => {
   console.log(pokemonData, "perfil")
