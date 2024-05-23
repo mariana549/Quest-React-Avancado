@@ -1,5 +1,9 @@
 import styled from "styled-components"
 
+export const Main = styled.main`
+   padding: 2rem;
+`
+
 export const Lista = styled.ul`
    display: flex;
    flex-wrap: wrap;
@@ -10,7 +14,7 @@ export const Lista = styled.ul`
 export const Carregando = styled.div`
    width: 300px;
    height: 150px;
-   background: #c4c4c420;
+   background: #00000079;
    border-radius: 20px;
    margin: 30px;
 `
@@ -24,9 +28,11 @@ export const Box = styled.div`
   @keyframes flutuar {
       0% {
          opacity: 1;
+         zoom: 100%;
       }
       100% {
          opacity: 0;
+         zoom: 110%;
       }
    }
 `

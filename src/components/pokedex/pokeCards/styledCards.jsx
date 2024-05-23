@@ -8,7 +8,7 @@ export const Div = styled.div`
    width: 50%;
    height: 100%;
    background-color: #f2f2f2;
-   box-shadow: inset 3px 0px 3px #00000081;
+   box-shadow: inset 3px 1px 3px #00000081;
    border-radius: 50% 15px 15px 50% ;
 ` 
 
@@ -26,6 +26,7 @@ export const Item = styled.li`
    background: #000000d3 ;
    border-radius: 20px;
    transition: transform 0.3s ease;
+   box-shadow: 0px 0px 3px #000000c4;
 
    &:hover {
       transform: translateY(-5px);

@@ -3,15 +3,16 @@ import styled from "styled-components"
 export const Header = styled.nav`
    display: flex;
    align-items: center;
-   background: black;
+   background: #060321;
    height: 400px;
    padding: 15px;
+   box-shadow: inset 5px 10px 10px #00000091;
    `
 
 export const Div = styled.div`
    display: flex;
    flex-direction: column;
-   gap: 40px;
+   gap: 60px;
    align-items: center;
    width: 100%;
 `

@@ -7,8 +7,8 @@ function PokeSearch() {
 
    const getPokemonsSearch = (name) => {
       const filteredPokemons = pokemons.filter(pokemon =>
-         pokemon.name.includes(name.toLowerCase()))
-      name ? setPokemon(filteredPokemons) : setPokemon(pokemons)
+         pokemon.name.includes(name.toLowerCase())) 
+         name ? setPokemon(filteredPokemons) : setPokemon(pokemons)
    };
 
    return (
