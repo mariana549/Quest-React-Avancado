@@ -23,16 +23,14 @@ export const Box = styled.div`
    display: flex;
    flex-wrap: wrap;
    position: relative;
-   animation: flutuar 1s infinite alternate ease-in-out;
+   animation: Sumir 1s infinite alternate ease-in-out;
 
-  @keyframes flutuar {
+  @keyframes Sumir {
       0% {
          opacity: 1;
-         zoom: 100%;
       }
       100% {
          opacity: 0;
-         zoom: 110%;
       }
    }
 `
