@@ -6,7 +6,6 @@ export const SelectTypes = styled.select`
    color: #ffcb05;
    border: solid 2px #2e6db5;
    border-radius: 10px;
-   margin-left: 5px;
    cursor: pointer;
 
    @media (max-width: 1200px) {

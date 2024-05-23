@@ -6,16 +6,17 @@ export const Pesquisar = styled.input`
    color: white;
    border: solid 2px #2e6db5;
    border-radius: 10px;
+   width: 500px;
 
    &:hover {
       box-shadow: 1px 1px 10px #FFCB05;
    }
 
    @media (max-width: 1200px) {
-   width: 140px;
+      width: 340px;
    }
 
    @media (max-width: 768px) {
-      width: 110px;
+      width: 200px;
    }
 `

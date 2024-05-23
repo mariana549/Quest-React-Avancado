@@ -7,7 +7,8 @@ export const Div = styled.div`
    margin: 0;
    width: 50%;
    height: 100%;
-   background-color: white;
+   background-color: #f2f2f2;
+   box-shadow: inset 3px 0px 3px #00000081;
    border-radius: 50% 15px 15px 50% ;
 ` 
 
@@ -23,20 +24,19 @@ export const Item = styled.li`
    width: 350px;
    height: 200px;
    background: #000000d3 ;
-   border: solid 2px #fff;
    border-radius: 20px;
    transition: transform 0.3s ease;
 
    &:hover {
       transform: translateY(-5px);
-      box-shadow: 0px 0px 10px white;
+      box-shadow: 0px 5px 4px #0000007a;
+      cursor: grab;
    }
 `;
 
 export const PokemonImage = styled.img`
    width: 140px;
    height: 140px;
-   padding: 5px;
    transition: transform 0.5s ease;
 `;
 
