@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
    body{
       background-color: #263F79;
+      /* background: -webkit-linear-gradient(left, #b29c89,  )*/
    }
 
    .container {

@@ -1,31 +1,32 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'
-import { Box, Item, NomePokemon, PokemonImage, Tipo, TypesList } from './styledCards';
+import { Box, Div, Id, Item, NomePokemon, PokemonImage, Tipo, TypesList } from './styledCards';
 
-export default function Card({ img, img2, name, types }) {
-   const [isImage, setIsImage] = useState(true);
-   const [prevImage, setPrevImage] = useState(img);
+export default function Card({ img, name, types, id }) {
+   // const [isImage, setIsImage] = useState(true);
+   // const [prevImage, setPrevImage] = useState(img);
 
-   const toggleImage = () => {
-      setIsImage(!isImage);
-   };
+   // const toggleImage = () => {
+   //    setIsImage(!isImage);
+   // };
 
-   const timeoutDuration = 2500; 
+   // const timeoutDuration = 2500; 
 
-   useEffect(() => {
-      if (prevImage !== (isImage ? img : img2)) {
-         const timeout = setTimeout(() => {
-            setIsImage(true);
-            setPrevImage(img);
-         }, timeoutDuration);
+   // useEffect(() => {
+   //    if (prevImage !== (isImage ? img : img2)) {
+   //       const timeout = setTimeout(() => {
+   //          setIsImage(true);
+   //          setPrevImage(img);
+   //       }, timeoutDuration);
 
-         return () => clearTimeout(timeout);
-      }
-   }, [isImage, img, img2, prevImage]);
+   //       return () => clearTimeout(timeout);
+   //    }
+   // }, [isImage,  prevImage]);
 
    return (
       <Item>
          <Box>
+            <Id>#{id}</Id>
             <NomePokemon>{name}</NomePokemon>
             <TypesList>
                  {types.map((type, i) => (
@@ -33,9 +34,9 @@ export default function Card({ img, img2, name, types }) {
                  ))}
             </TypesList>
          </Box>
-         <div onMouseEnter={toggleImage}>
-            <PokemonImage src={isImage ? img : img2} alt={name} />
-         </div>
+         <Div>
+            <PokemonImage src={img} alt={name} />
+         </Div>
       </Item>
    );
 }
@@ -44,5 +45,6 @@ Card.propTypes = {
    img: PropTypes.string.isRequired,
    img2: PropTypes.string.isRequired,
    name: PropTypes.string.isRequired,
+   id: PropTypes.string.isRequired,
    types: PropTypes.any.isRequired
 };

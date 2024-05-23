@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { HabilitiePokemon } from './habilities';
+// import { HabilitiePokemon } from './habilities';
 import { ConteudoBox, Dados, H3, Imagem, ImgContainer, Li, List, Main, PerfilTitulo, Tipo, TypesList, VersaoPokemon, Voltar } from './styledPerfil';
 
 export const Pokemon = ({ pokemonData }) => {
@@ -10,8 +10,8 @@ export const Pokemon = ({ pokemonData }) => {
   // const [ability, setAbility] = useState();
 
   const imagens = {
-    front: pokemonData.sprites.front_default,
-    front_shiny: pokemonData.sprites.front_shiny,
+    front: pokemonData.sprites.other.dream_world.front_default,
+    front_shiny: pokemonData.sprites.other.home.front_shiny,
   }
 
 
@@ -35,7 +35,9 @@ export const Pokemon = ({ pokemonData }) => {
         <PerfilTitulo>#{pokemonData.id} {pokemonData.name}</PerfilTitulo>
 
         <ImgContainer onClick={handleMouseEnter}>
-          <Imagem src={isImage ? imagens.front : imagens.front_shiny} alt={pokemonData.name} />
+          {/* <Imagem src={isImage ? imagens.front : imagens.front_shiny} alt={pokemonData.name} /> */}
+          <Imagem src={pokemonData.sprites.other.
+dream_world.front_default} alt={pokemonData.name} />
 
           <ConteudoBox>
             <VersaoPokemon>{isImage ? "Normal" : "Shiny"}</VersaoPokemon>
@@ -47,7 +49,7 @@ export const Pokemon = ({ pokemonData }) => {
           </ConteudoBox>
         </ImgContainer>
 
-        <Dados>
+        {/* <Dados>
           <H3>Habilidades: </H3>
           <div>
             <List>
@@ -56,7 +58,7 @@ export const Pokemon = ({ pokemonData }) => {
               ))}
             </List>
           </div>
-        </Dados>
+        </Dados> */}
 
         <Dados className='box'>
           <H3>Movimentos: </H3>
