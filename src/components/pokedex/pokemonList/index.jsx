@@ -17,7 +17,7 @@ export const PokemonList = ({ setPokemonData }) => {
    const limitPokemons = 1000;
 
    useEffect(() => {
-      const axiosData = async () => {
+      const fechPokemon = async () => {
          try { 
             const data = await getPokedex(limitPokemons, 0);
             setPokemon([...data])
@@ -26,7 +26,7 @@ export const PokemonList = ({ setPokemonData }) => {
             console.error(`Error fetching Pokemon API: ${error.message}`)
          }
       }
-      axiosData()
+      fechPokemon()
    }, [])
 
    const handlerShowMore = () => {
@@ -45,9 +45,9 @@ export const PokemonList = ({ setPokemonData }) => {
 
                   : pokemons.slice(0, pokemonsVisiveis).map((pokemon, index) => (
                      <Link to={`/Perfil/${pokemon.name}`} onClick={() => setPokemonData(pokemon)} key={index}>
-                        {/* {console.log(pokemon)} */}
                         <Card
                            img={pokemon.sprites.other.dream_world.front_default}
+                           img2={pokemon.sprites.other.home.front_default}
                            name={pokemon.name}
                            types={pokemon.types}
                            id={pokemon.id}
@@ -57,11 +57,11 @@ export const PokemonList = ({ setPokemonData }) => {
 
             </Lista>
 
-            {pokemonsVisiveis < 501 && (
+            {pokemonsVisiveis < limitPokemons && (
                <Button onClick={handlerShowMore} background="#437bff">Buscar Mais</Button>
             )}
 
-            {pokemonsVisiveis > 499 && (
+            {pokemonsVisiveis > limitPokemons - 1 && (
                <Button onClick={goUpTop}>Subir para Topo</Button>
             )}
          </main>

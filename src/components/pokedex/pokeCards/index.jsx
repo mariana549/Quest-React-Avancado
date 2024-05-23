@@ -2,9 +2,10 @@
 import PropTypes from 'prop-types'
 import { Box, Div, Id, Item, NomePokemon, PokemonImage, Tipo, TypesList } from './styledCards';
 
-export default function Card({ img, name, types, id }) {
+export default function Card({ img, img2, name, types, id }) {
    // const [isImage, setIsImage] = useState(true);
    // const [prevImage, setPrevImage] = useState(img);
+
 
    // const toggleImage = () => {
    //    setIsImage(!isImage);
@@ -35,7 +36,7 @@ export default function Card({ img, name, types, id }) {
             </TypesList>
          </Box>
          <Div>
-            <PokemonImage src={img} alt={name} />
+            <PokemonImage src={ img === null ? img2 : img } alt={name} />
          </Div>
       </Item>
    );
