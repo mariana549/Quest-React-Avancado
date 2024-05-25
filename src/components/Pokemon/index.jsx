@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 // import { HabilitiePokemon } from './habilities';
 import { ConteudoBox, Dados, H3, Imagem, ImgContainer, Li, List, Main, PerfilTitulo, Tipo, TypesList, VersaoPokemon, Voltar } from './styledPerfil';
+import Container from '../container';
 
 export const Pokemon = ({ pokemonData }) => {
   console.log(pokemonData, "pokemon")
@@ -28,8 +29,8 @@ export const Pokemon = ({ pokemonData }) => {
   }, [isImage]);
 
   return (
-    <>
-      <Main className='container'>
+    <Container>
+      <Main>
         <Link to={"/"}><Voltar>Retornar</Voltar></Link>
 
         <PerfilTitulo>#{pokemonData.id} {pokemonData.name}</PerfilTitulo>
@@ -72,7 +73,7 @@ dream_world.front_default} alt={pokemonData.name} />
           </List>
         </Dados>
       </Main>
-    </>
+    </Container>
   )
 }
 

@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const Main = styled.main`
-   padding: 2rem;
+   padding-top: 2rem;
+   width: 100%;
 `
 
 export const Lista = styled.ul`

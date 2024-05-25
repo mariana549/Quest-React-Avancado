@@ -6,6 +6,7 @@ export const Header = styled.nav`
    background: #060321;
    height: 400px;
    padding: 15px;
+   width: 100%;
    box-shadow: inset 5px 10px 10px #00000091;
    `
 
@@ -33,14 +34,14 @@ export const Logo = styled.img`
    }
 
    @media (max-width: 1200px) {
-      width: 250px;
+      width: 330px;
    }
 
    @media (max-width: 768px) {
-      width: 200px;
+      width: 270px;
    }
 
-   @media (max-width: 500px) {
-      display: none;
+   @media (max-width: 375px) {
+      width: 220px;
    }
 `

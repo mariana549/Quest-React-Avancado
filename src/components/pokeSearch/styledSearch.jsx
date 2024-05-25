@@ -17,10 +17,14 @@ export const Pesquisar = styled.input`
    }
 
    @media (max-width: 1200px) {
-      width: 340px;
+      width: 400px;
    }
 
    @media (max-width: 768px) {
+      width: 250px;
+   }
+
+   @media (max-width: 375px) {
       width: 200px;
    }
 `
