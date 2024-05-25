@@ -3,14 +3,11 @@ import styled from "styled-components"
 export const Main = styled.main`
   display: grid;
   padding: 20px 0px;
-  margin-top: 20px;
-  border: solid 8px #FFCB05;
-  border-radius: 25px;
-  background-color: #010101c7;
+  background-color: #000000;
 
   @media (max-width: 1200px) {
-    margin: 20px;
-  }
+
+}
 `
 export const Voltar = styled.p`
   color: #ffcd05cf;
@@ -24,10 +21,11 @@ export const Voltar = styled.p`
 `
 export const ImgContainer = styled.div`
   text-align: center;
-  width: 95%;
-  border: solid 5px #ffcd05cf;
-  border-radius: 0px 0px 35px 35px;
-  background-color: #ededed;
+  width: 55%;
+  height: 90%;
+  border-radius: 50%;
+  background-color: #d4fffa;
+  border: 4px solid #ffcd05;
 `
 
 export const Imagem = styled.img`
@@ -45,9 +43,7 @@ export const Imagem = styled.img`
 
 export const ConteudoBox = styled.div`
   display: flex;
-  padding: 10px 0px;
-  background-color: #ffcd05cf;
-  border-radius: 0px 0px 25px 25px;
+  margin-top: 10px;
 `
 
 export const PerfilTitulo = styled.h1`
@@ -68,7 +64,7 @@ export const TypesList = styled.ul`
 `
 export const Tipo = styled.li`
   font-weight: 500;
-  color: #fff;
+  color: #fffffc;
   background-color: #191a1a47;
   font-size: 20px;
   padding: 5px;
@@ -81,7 +77,7 @@ export const Tipo = styled.li`
   }
   `
 export const VersaoPokemon = styled.p`
-  color: #000;
+  color: #fffafa;
   font-size: 1.25rem;
   font-weight: bold;
   align-self: center;
@@ -107,13 +103,14 @@ export const H3 = styled.h3`
 `
 export const List = styled.ul`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 10px;
   font-weight: 500;
   text-transform: capitalize;
 `
 export const Li = styled.li`
-  background-color: #ffffff;
+  background-color: #e4e3e3;
   color: #2500a1;
   border-radius: 10px;
   padding: 6px;

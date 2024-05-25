@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const Main = styled.main`
    padding-top: 2rem;
    width: 100%;
+   background-color: #ced5e4;
 `
 
 export const Lista = styled.ul`

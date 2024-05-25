@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import rows from "./src/assets/image/rows.png"
 
 const GlobalStyle = createGlobalStyle`
    *{
@@ -12,6 +13,9 @@ const GlobalStyle = createGlobalStyle`
    }
 
    body{
+      background-image: url(${rows});
+      background-repeat: no-repeat;
+      background-size: cover;
       background-color: #ced5e4;
    }
 `
