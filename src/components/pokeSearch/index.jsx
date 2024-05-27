@@ -4,7 +4,6 @@ import { Pesquisar } from "./styledSearch";
 
 function PokeSearch() {
    const {pokemons, setPokemon} = useContext(Context)
-
    const getPokemonsSearch = (name) => {
       const filteredPokemons = pokemons.filter(pokemon =>
          pokemon.name.includes(name.toLowerCase())) 

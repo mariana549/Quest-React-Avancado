@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Themes from "../../../contexts/themes/themes";
 
 export const Div = styled.div`
    display: flex;
@@ -7,7 +8,7 @@ export const Div = styled.div`
    margin: 0;
    width: 50%;
    height: 100%;
-   background-color: #f2f2f2;
+   background-color: #f2f2f2a4;
    box-shadow: inset 3px 1px 3px #00000081;
    border-radius: 50% 15px 15px 50% ;
 ` 
@@ -23,7 +24,7 @@ export const Item = styled.li`
    align-items: center;
    width: 350px;
    height: 200px;
-   background: #000000d3 ;
+   background:  ${(props) => Themes.cardBg[props.children[0].props.children[2].props.children[0].props.children]};
    border-radius: 20px;
    transition: transform 0.3s ease;
    box-shadow: 0px 0px 3px #000000c4;
@@ -60,7 +61,7 @@ export const TypesList = styled.ul`
 `
 
 export const Tipo = styled.li`
-   color: #959594;
+   color: ${(props) =>  Themes.types[props.children]};
    font-weight: bold;
    font-size: 14px;
 `

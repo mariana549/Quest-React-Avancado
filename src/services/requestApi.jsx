@@ -1,7 +1,6 @@
 import axios from "axios"
 
 export async function getPokedex(limit, offset) {
-   // const urls = [];
    const baseUrl = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
    const response = await axios.get(`${baseUrl}`)
    const results = response.data.results

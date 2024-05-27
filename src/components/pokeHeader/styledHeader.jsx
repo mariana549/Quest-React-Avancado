@@ -7,7 +7,6 @@ export const Header = styled.nav`
    height: 400px;
    padding: 15px;
    width: 100%;
-   box-shadow: inset 5px 10px 10px #00000091;
    `
 
 export const Div = styled.div`

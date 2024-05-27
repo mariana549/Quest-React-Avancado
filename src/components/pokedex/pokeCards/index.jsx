@@ -1,7 +1,5 @@
-// import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'
 import { Box, Div, Id, Item, NomePokemon, PokemonImage, Tipo, TypesList } from './styledCards';
-
 export default function Card({ img, img2, name, types, id }) {
    // const [isImage, setIsImage] = useState(true);
    // const [prevImage, setPrevImage] = useState(img);
@@ -23,6 +21,7 @@ export default function Card({ img, img2, name, types, id }) {
    //       return () => clearTimeout(timeout);
    //    }
    // }, [isImage,  prevImage]);
+
 
    return (
       <Item>

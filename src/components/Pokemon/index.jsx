@@ -7,6 +7,9 @@ import Container from '../container';
 
 export const Pokemon = ({ pokemonData }) => {
   console.log(pokemonData, "pokemon")
+
+
+
   const [isImage, setIsImage] = useState(true);
   // const [ability, setAbility] = useState();
 
@@ -37,8 +40,7 @@ export const Pokemon = ({ pokemonData }) => {
 
         <ImgContainer onClick={handleMouseEnter}>
           {/* <Imagem src={isImage ? imagens.front : imagens.front_shiny} alt={pokemonData.name} /> */}
-          <Imagem src={pokemonData.sprites.other.
-dream_world.front_default} alt={pokemonData.name} />
+          <Imagem src={pokemonData.sprites?.other?.["official-artwork"]?.front_default} alt={pokemonData.name} />
 
           <ConteudoBox>
             <VersaoPokemon>{isImage ? "Normal" : "Shiny"}</VersaoPokemon>
@@ -61,7 +63,7 @@ dream_world.front_default} alt={pokemonData.name} />
           </div>
         </Dados> */}
 
-        <Dados className='box'>
+        <Dados>
           <H3>Movimentos: </H3>
           <List>
             {pokemonData.moves
