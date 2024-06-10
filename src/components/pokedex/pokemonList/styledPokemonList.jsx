@@ -1,13 +1,9 @@
 import styled from "styled-components"
 
-export const Div = styled.div`
-   background-image: repeating-linear-gradient(-45deg, #272161 -2px, #272161 2px, #00000010 3px, #00000010 6px);
-`
-
 export const Main = styled.main`
    padding-top: 2rem;
    width: 100%;
-   background-color: #272161;
+   background: ${(props) => props.theme.Theme.mainBg};
 `
 
 export const Lista = styled.ul`

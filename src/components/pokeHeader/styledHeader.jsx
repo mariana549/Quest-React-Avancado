@@ -4,10 +4,10 @@ export const Header = styled.nav`
    display: flex;
    align-items: center;
    background: #060321;
-   height: 400px;
-   padding: 15px;
+   height: 50vh;
+   padding: 25px;
    width: 100%;
-   `
+`
 
 export const Div = styled.div`
    display: flex;
@@ -42,5 +42,24 @@ export const Logo = styled.img`
 
    @media (max-width: 375px) {
       width: 220px;
+   }
+`
+
+export const BoxsContainer = styled.div`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+`
+
+export const PokesImg = styled.img`
+   width: 300px;
+   border: 3px solid #4b7ad3;
+   border-radius: 10%;
+   opacity: 50%;
+
+   &:hover {
+      opacity: 100%;
+      zoom: 120%;
    }
 `

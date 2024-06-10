@@ -2,20 +2,28 @@ import { Route, Routes } from "react-router-dom"
 import Home from "../pages/home"
 import { Perfil } from "../pages/pokemon-perfil"
 import { useState } from "react"
-import Themes from "../contexts/themes/themes"
 import { ThemeProvider } from "styled-components"
+import Colors from "../contexts/colors"
+import { Themes } from "../contexts/themes"
+import TogglerButton from "../components/toogleButton"
 
-function AppRoutes () {
-   const [pokemonData, setPokemonData] = useState()
+function AppRoutes() {
+   const [pokemonData, setPokemonData] = useState({})
+   const [theme, setTheme] = useState("dark")
+
+   function togglerButton() {
+      setTheme((prevState) => prevState === 'light' ? "dark" : "light")
+   }
 
    return (
-      <ThemeProvider theme={Themes}>
+      <ThemeProvider theme={{ Theme: Themes[theme], colors: Colors }}>
+         <TogglerButton togglerButton={togglerButton} theme={theme} />
          <Routes>
-            <Route path="/" element={<Home setPokemonData={setPokemonData} />} />
+            <Route path="/" element={<Home setPokemonData={setPokemonData}/>} />
             <Route path="Perfil/:id" element={<Perfil pokemonData={pokemonData} />} />
          </Routes>
       </ThemeProvider>
    )
 }
 
-export { AppRoutes } 
+export { AppRoutes }  

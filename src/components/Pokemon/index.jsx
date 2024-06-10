@@ -1,84 +1,82 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-// import { HabilitiePokemon } from './habilities';
-import { ConteudoBox, Dados, H3, Imagem, ImgContainer, Li, List, Main, PerfilTitulo, Tipo, TypesList, VersaoPokemon, Voltar } from './styledPerfil';
+import { Box, ConteudoBox, Dado, Dados, H3, Hr, Imagem, ImgContainer, Li, List, Main, PerfilTitulo, PokeId, Test, Tipo, TypesList, VersaoPokemon, Voltar } from './styledPerfil';
 import Container from '../container';
+import TableDados from './tableDados';
+import { HabilitiePokemon } from './abilities';
+import Moves from './moves';
 
 export const Pokemon = ({ pokemonData }) => {
-  console.log(pokemonData, "pokemon")
-
-
-
-  const [isImage, setIsImage] = useState(true);
-  // const [ability, setAbility] = useState();
-
-  const imagens = {
-    front: pokemonData.sprites.other.dream_world.front_default,
-    front_shiny: pokemonData.sprites.other.home.front_shiny,
-  }
-
-
-
-  const handleMouseEnter = () => {
-    setIsImage(!isImage);
-  };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsImage(!isImage);
-    }, 8000);
-    return () => clearTimeout(timer);
-  }, [isImage]);
+  const pokemon = pokemonData;
+  const type = pokemon.types[0]
+  const pesoKg = pokemon.weight / 10
+  const alturaM = pokemon.height / 10
 
   return (
-    <Container>
-      <Main>
-        <Link to={"/"}><Voltar>Retornar</Voltar></Link>
-
-        <PerfilTitulo>#{pokemonData.id} {pokemonData.name}</PerfilTitulo>
-
-        <ImgContainer onClick={handleMouseEnter}>
-          {/* <Imagem src={isImage ? imagens.front : imagens.front_shiny} alt={pokemonData.name} /> */}
-          <Imagem src={pokemonData.sprites?.other?.["official-artwork"]?.front_default} alt={pokemonData.name} />
-
-          <ConteudoBox>
-            <VersaoPokemon>{isImage ? "Normal" : "Shiny"}</VersaoPokemon>
+    <Main className={type}>
+      <Container>
+        <ConteudoBox>
+          <PerfilTitulo className={type}>{pokemon.name}</PerfilTitulo>
+          <PokeId>#{pokemon.id} </PokeId>
+        </ConteudoBox>
+        <ImgContainer>
+          <Imagem
+            src={pokemon.sprites?.other?.["official-artwork"]?.front_default}
+            alt={pokemon.name}
+            style={{
+              transform: "translateX(20px)",
+            }}
+          />
+          <Imagem
+            src={pokemon.sprites?.other?.["official-artwork"]?.front_shiny}
+            alt={pokemon.name}
+            style={{
+              transform: "translateX(-20px)",
+              scale: "0.7",
+            }}
+          />
+        </ImgContainer>
+        <ConteudoBox>
+          <Box>
+            <TableDados
+              pesoKg={pesoKg}
+              alturaM={alturaM}
+              species={pokemon.species.url}
+              type={type}
+              baseExp={pokemon.base_experience}
+            />
             <TypesList>
-              {pokemonData.types.map((type, i) => (
+              {pokemon.types.map((type, i) => (
                 <Tipo key={i}>{type.type.name}</Tipo>
               ))}
             </TypesList>
-          </ConteudoBox>
-        </ImgContainer>
-
-        {/* <Dados>
-          <H3>Habilidades: </H3>
-          <div>
-            <List>
-              {pokemonData.abilities.map((dados, i) => (
-                <HabilitiePokemon key={i} url={dados.ability.url} name={dados.ability.name} />
-              ))}
-            </List>
-          </div>
-        </Dados> */}
-
-        <Dados>
-          <H3>Movimentos: </H3>
-          <List>
-            {pokemonData.moves
-              .map((movimento) => movimento.move.name)
-              .sort((a, b) => a.localeCompare(b))
-              .map((nomeMovimento, i) => (
-                <Li key={i}>{nomeMovimento}</Li>
-              ))}
-          </List>
-        </Dados>
-      </Main>
-    </Container>
+          </Box>
+          <Box>
+            <H3 className={type}>Abilities</H3>
+            {pokemon.abilities.map((e, i) => (
+              <HabilitiePokemon
+                key={i}
+                name={e.ability.name}
+                url={e.ability.url}
+                type={type}
+              />
+            ))}
+          </Box>
+        </ConteudoBox>
+        <Hr />
+          <Box>
+          <H3 className={type}>Movimentos: </H3>
+            <Moves
+              type={ type }
+              moves={ pokemon.moves }
+            />
+          </Box>
+        <Link to={"/"}><Voltar className={type}>Home</Voltar></Link>
+      </Container>
+    </Main>
   )
 }
 
 Pokemon.propTypes = {
-  pokemonData: PropTypes.any.isRequired
+  pokemonData: PropTypes.object.isRequired
 }

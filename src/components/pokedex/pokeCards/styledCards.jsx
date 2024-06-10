@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Themes from "../../../contexts/themes/themes";
+import Themes from "../../../contexts/colors";
 
 export const Div = styled.div`
    display: flex;
@@ -8,10 +8,17 @@ export const Div = styled.div`
    margin: 0;
    width: 50%;
    height: 100%;
-   background-color: #f2f2f2a4;
+   background: ${(props) => props.theme.Theme.cardDiv};
    box-shadow: inset 3px 1px 3px #00000081;
    border-radius: 50% 15px 15px 50% ;
 ` 
+
+export const PokeCards = styled.div`
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 20px;
+`
 
 export const Id = styled.span`
    font-size: 27px;

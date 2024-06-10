@@ -4,18 +4,26 @@ import { Pesquisar } from "./styledSearch";
 
 function PokeSearch() {
    const {pokemons, setPokemon} = useContext(Context)
+   
+// Função para buscar Pokémon com base no nome
    const getPokemonsSearch = (name) => {
-      const filteredPokemons = pokemons.filter(pokemon =>
-         pokemon.name.includes(name.toLowerCase())) 
-         name ? setPokemon(filteredPokemons) : setPokemon(pokemons)
+      if (name) {
+         const filteredPokemons = pokemons.filter(pokemon =>
+            pokemon.name.includes(name.toLowerCase())
+         );
+         setPokemon(filteredPokemons);
+      } else {
+         setPokemon(pokemons);
+      }
    };
+   
 
    return (
       <form>
          <Pesquisar
             placeholder="Pesquisando...."
             className="pesquisando"
-            onChange={e => getPokemonsSearch(e.target.value)}
+            onChange={event => getPokemonsSearch(event.target.value)}
          />
       </form>
    )

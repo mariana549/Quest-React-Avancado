@@ -4,7 +4,7 @@ import { PokemonList } from '../../components/pokedex/pokemonList'
 export default function Home({setPokemonData}) {
   return (
     <>
-      <PokemonList setPokemonData={setPokemonData} />
+      <PokemonList setPokemonData={setPokemonData}  />
     </>
   )
 }
