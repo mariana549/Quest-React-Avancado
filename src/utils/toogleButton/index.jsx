@@ -1,5 +1,5 @@
-import sol from '../../../assets/image/sol.png';
-import lua from '../../../assets/image/lua.png';
+import sol from '../../assets/image/sol.png';
+import lua from '../../assets/image/lua.png';
 import PropTypes from "prop-types"
 import { Box, ButtonToggle, Img } from './styledTogglerButton';
 

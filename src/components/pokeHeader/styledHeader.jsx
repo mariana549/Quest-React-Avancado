@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const Header = styled.nav`
    display: flex;
    align-items: center;
-   background: #060321;
    height: 50vh;
    padding: 25px;
    width: 100%;
@@ -50,16 +49,4 @@ export const BoxsContainer = styled.div`
    flex-direction: column;
    align-items: center;
    justify-content: center;
-`
-
-export const PokesImg = styled.img`
-   width: 300px;
-   border: 3px solid #4b7ad3;
-   border-radius: 10%;
-   opacity: 50%;
-
-   &:hover {
-      opacity: 100%;
-      zoom: 120%;
-   }
 `

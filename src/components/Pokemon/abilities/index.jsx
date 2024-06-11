@@ -20,8 +20,8 @@ export const HabilitiePokemon = ({url, name, type}) => {
  
    return (
      <Li>
-       <Name className={type}>{name}</Name>:
-       <DescriptionAbilities>Não foi possivel renderizar a descrição </DescriptionAbilities>
+       <Name className={type}>{name}: </Name>
+       <DescriptionAbilities> Unable to render description</DescriptionAbilities>
        {/* <DescriptionAbilities>{descriptionAbilitiesEn.map(e => e.effect)}</DescriptionAbilities> */}
      </Li>
    );
@@ -30,5 +30,6 @@ export const HabilitiePokemon = ({url, name, type}) => {
 
 HabilitiePokemon.propTypes = {
    name: PropTypes.string.isRequired,
-   url: PropTypes.string.isRequired
+   url: PropTypes.string.isRequired,
+   type: PropTypes.object.isRequired,
 };

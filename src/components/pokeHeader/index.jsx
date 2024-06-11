@@ -1,5 +1,4 @@
 import logoPokemon from "../../assets/image/pokemon-logo.png"
-// import pokeImg from "../../assets/image/pokemonsImg.jpg"
 import { Logo, Header, Div, Box, BoxsContainer } from "./styledHeader";
 import PokeSearch from '../../services/pokeSearch';
 import PokeTypesFiltered from '../../services/pokeFiltros/pokeTypes/PokeTypesFiltered';
@@ -9,8 +8,8 @@ import Context from "../../contexts/pokeDados/context";
 import { filteredPokemonsName } from "../../services/pokeFiltros/pokeSprites/pokeSprites";
 
 export const PokeHeader = () => {
-   const {pokemons} = useContext(Context)
-   const pokeNames = ["pikachu", "charmander", "bulbasaur", "squirtle"];   
+   const { pokemons } = useContext(Context)
+   const pokeNames = ["pikachu", "charmander", "bulbasaur", "squirtle"];
 
    const imgs = filteredPokemonsName(pokemons, pokeNames)
 
@@ -20,18 +19,17 @@ export const PokeHeader = () => {
             <Container>
                <Div>
                   <Logo src={logoPokemon} alt="Logo" />
-                     <BoxsContainer>
-                        <Box>
-                           {imgs.map((gif, i) =>
-                              <img src={gif} key={i} alt="" />
-                           )}
-                        </Box>
-                        <Box>
-                           <PokeSearch />
-                           <PokeTypesFiltered />
-                        </Box>
-                     </BoxsContainer>
-                  {/* <PokesImg src={pokeImg} alt="imagem pokemons" /> */}
+                  <BoxsContainer>
+                     <Box>
+                        {imgs.map((gif, i) =>
+                           <img src={gif} key={i} alt="" />
+                        )}
+                     </Box>
+                     <Box>
+                        <PokeSearch />
+                        <PokeTypesFiltered />
+                     </Box>
+                  </BoxsContainer>
                </Div>
             </Container>
          </Header>

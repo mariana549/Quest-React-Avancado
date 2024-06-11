@@ -36,4 +36,5 @@ export default function Card({ pokemon, setPokemonData }) {
 
 Card.propTypes = {
    pokemon: PropTypes.array.isRequired,
+   setPokemonData: PropTypes.func.isRequired,
 };

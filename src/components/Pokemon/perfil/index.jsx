@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Box, ConteudoBox, H3, Hr, Imagem, ImgContainer, Main, PerfilTitulo, PokeId, Tipo, TypesList, Voltar } from './styledPerfil';
+import { Box, ConteudoBox, H3, Hr, Imagem, ImgContainer, Main, PerfilTitulo, PokeId, Tipo, TypesList, Return } from './styledPerfil';
 import Container from '../../container';
 import TableDados from '../tableDados';
 import { HabilitiePokemon } from '../abilities';
@@ -65,13 +65,13 @@ export const Pokemon = ({ pokemonData }) => {
         </ConteudoBox>
         <Hr />
           <Box>
-          <H3 className={type}>Movimentos: </H3>
+          <H3 className={type}>Movements</H3>
             <Moves
               type={ type }
               moves={ pokemon.moves }
             />
           </Box>
-        <Link to={"/"}><Voltar className={type}>Home</Voltar></Link>
+        <Link to={"/"}><Return className={type}>Return</Return></Link>
       </Container>
     </Main>
   )

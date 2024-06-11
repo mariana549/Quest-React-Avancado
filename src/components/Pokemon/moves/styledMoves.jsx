@@ -10,7 +10,7 @@ export const ListMoves = styled.ul`
 
 export const Nomes = styled.li`
    width: 100%;
-   color: #14161b;
+   color: ${(props) => props.theme.Theme.color10};
    font-size: 18px;
    text-transform: capitalize;
 `

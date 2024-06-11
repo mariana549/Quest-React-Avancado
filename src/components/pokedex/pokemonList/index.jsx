@@ -3,12 +3,13 @@ import Card from "../pokeCards";
 import PropTypes from 'prop-types';
 import { PokeHeader } from "../../pokeHeader";
 import { Button } from "../../pokeButton";
-import { Box, Carregando, Lista, Main } from "./styledPokemonList";
+import { Lista, Main } from "./styledPokemonList";
 import Provider from "../../../contexts/pokeDados/Provider";
-import { goUpTop } from "../../utils/scrollToButton";
+import { goUpTop } from "../../../utils/scrollToButton";
 import { getPokedex, getPokemon } from "../../../services/requestApi";
 import Container from "../../container";
 import axios from "axios";
+import CardLoanding from "../../../utils/cardLoading";
 
 export const PokemonList = ({ setPokemonData }) => {
    const [pokemons, setPokemon] = useState([])
@@ -47,9 +48,7 @@ export const PokemonList = ({ setPokemonData }) => {
             <Container>
                <Lista>
                   {loading ?
-                     <Box>
-                        <Carregando />
-                     </Box>
+                     <CardLoanding />
                      :
                      (pokemonsVisiveis > 0 ?
                         <Card pokemon={pokemons} setPokemonData={setPokemonData} /> : "pokemons undefined")

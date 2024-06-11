@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { pokeSpecies } from "../../../services/requestApi"
 import PropTypes from "prop-types"
-import { Dado, Propriedade, Table, Tbody, Thead, TituloTabela, Tr } from "./styledTable"
+import { Dado, Propriedade, Table, Tbody, TituloTabela, Tr } from "./styledTable"
 
 function TableDados({ pesoKg, alturaM, species, type, baseExp }) {
    const [specie, setSpecie] = useState({})
@@ -24,18 +24,18 @@ function TableDados({ pesoKg, alturaM, species, type, baseExp }) {
 
    return (
       <Table>
-         <Thead>
+         <thead>
             <Tr>
-               <TituloTabela className={type}>Dados do Pokemon</TituloTabela>
+               <TituloTabela className={type}>Pokemon Data</TituloTabela>
             </Tr>
-         </Thead>
+         </thead>
          <Tbody>
             <Tr>
-               <Propriedade>Altura:</Propriedade>
+               <Propriedade>Height:</Propriedade>
                <Dado>{alturaM}m</Dado>
             </Tr>
             <Tr>
-               <Propriedade>Peso:</Propriedade>
+               <Propriedade>Weight:</Propriedade>
                <Dado>{pesoKg}kg</Dado>
             </Tr>
             <Tr>
