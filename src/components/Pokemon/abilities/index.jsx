@@ -21,7 +21,7 @@ export const HabilitiePokemon = ({url, name, type}) => {
    return (
      <Li>
        <Name className={type}>{name}</Name>:
-       <DescriptionAbilities>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia magnam perspiciatis veniam, voluptas alias</DescriptionAbilities>
+       <DescriptionAbilities>Não foi possivel renderizar a descrição </DescriptionAbilities>
        {/* <DescriptionAbilities>{descriptionAbilitiesEn.map(e => e.effect)}</DescriptionAbilities> */}
      </Li>
    );

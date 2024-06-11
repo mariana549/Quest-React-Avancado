@@ -5,7 +5,7 @@ import { PokeHeader } from "../../pokeHeader";
 import { Button } from "../../pokeButton";
 import { Box, Carregando, Lista, Main } from "./styledPokemonList";
 import Provider from "../../../contexts/pokeDados/Provider";
-import { goUpTop } from "../../scrollToButton";
+import { goUpTop } from "../../utils/scrollToButton";
 import { getPokedex, getPokemon } from "../../../services/requestApi";
 import Container from "../../container";
 import axios from "axios";

@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import Context from "../../contexts/pokeDados/context"
+import Context from "../../../contexts/pokeDados/context"
 import { Option, SelectTypes } from "./styledTypes"
 
 function PokeTypesFiltered() {

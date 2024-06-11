@@ -1,6 +1,5 @@
 import styled from "styled-components"
-import Themes from "../../contexts/colors"
-// import Themes from "../../contexts/themes/themes"
+import Themes from "../../utils/colors"
 
 export const Test = styled.p`
   color: white;
@@ -10,51 +9,15 @@ export const Test = styled.p`
   max-width: 400px;
 `
 
-export const Table = styled.table`
-  /* border: 1px solid white; */
-  width: 100%;
-  padding: 10px;
-  margin: 15px 0;
-`
-export const Thead = styled.thead`
-  /* width: 90%; */
-`
-export const Tbody = styled.tbody`
-  width: 100%;
-  padding: 10px;
-  margin: 10px;
-`
-
-export const Tr = styled.tr`
-    width: 100%;
-`
-export const TituloTabela = styled.th`
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  padding-bottom: 10px;
-  text-align: start;
-  color: ${(props) => Themes.types[props.className.type.name]};
-`
-
-export const Propriedade = styled.td`
-  font-weight: bold;
-  color:  white;
-`
-
-export const Dado = styled.td`
-  color: #bdbdbd;
-  text-align: end;
-  text-transform: capitalize;
-`
-
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px 0px;
-  background: radial-gradient(circle at 50% -90%, ${(props) => Themes.cardBg[props.className.type.name]} 70%, #edf1ffe8 70.1%);
+  background: radial-gradient(circle at 50% -130%,
+     ${(props) => Themes.cardBg[props.className.type.name]} 70%,
+    #edf1ffe8 70.1%);
 
   @media (max-width: 1200px) {
 

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Box, ConteudoBox, Dado, Dados, H3, Hr, Imagem, ImgContainer, Li, List, Main, PerfilTitulo, PokeId, Test, Tipo, TypesList, VersaoPokemon, Voltar } from './styledPerfil';
-import Container from '../container';
-import TableDados from './tableDados';
-import { HabilitiePokemon } from './abilities';
-import Moves from './moves';
+import { Box, ConteudoBox, H3, Hr, Imagem, ImgContainer, Main, PerfilTitulo, PokeId, Tipo, TypesList, Voltar } from './styledPerfil';
+import Container from '../../container';
+import TableDados from '../tableDados';
+import { HabilitiePokemon } from '../abilities';
+import Moves from '../moves';
 
 export const Pokemon = ({ pokemonData }) => {
   const pokemon = pokemonData;

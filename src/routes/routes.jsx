@@ -3,9 +3,9 @@ import Home from "../pages/home"
 import { Perfil } from "../pages/pokemon-perfil"
 import { useState } from "react"
 import { ThemeProvider } from "styled-components"
-import Colors from "../contexts/colors"
-import { Themes } from "../contexts/themes"
-import TogglerButton from "../components/toogleButton"
+import TogglerButton from "../components/utils/toogleButton"
+import { Themes } from "../components/utils/themes"
+import Colors from "../components/utils/colors"
 
 function AppRoutes() {
    const [pokemonData, setPokemonData] = useState({})
