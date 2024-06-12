@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Header = styled.nav`
    display: flex;
    align-items: center;
-   height: 50vh;
+   max-height: 400px;
    padding: 25px;
    width: 100%;
 `

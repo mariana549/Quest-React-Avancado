@@ -1,10 +1,11 @@
 import styled from "styled-components"
+import { mainBg } from "../../../utils/constants/constants"
 
 export const Main = styled.main`
    padding-top: 2rem;
    width: 100%;
    min-height: 455px;
-   background: ${(props) => props.theme.Theme.mainBg};
+   background: ${mainBg};
 `
 
 export const Lista = styled.ul`
