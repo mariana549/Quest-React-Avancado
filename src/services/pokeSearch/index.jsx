@@ -3,7 +3,7 @@ import Context from "../../contexts/pokeDados/context";
 import { Pesquisar } from "./styledSearch";
 import { getPokedex, getPokemon } from "../requestApi";
 import axios from "axios";
-import { limitPokemons } from "../variaveis";
+import { limitPokemons } from "../../utils/constants/constants";
 
 function PokeSearch() {
    const { pokemons, setPokemon, setShowButtons } = useContext(Context)

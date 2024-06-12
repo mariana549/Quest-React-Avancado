@@ -10,7 +10,7 @@ import { getPokedex, getPokemon } from "../../../services/requestApi";
 import Container from "../../container";
 import axios from "axios";
 import CardLoanding from "../../../utils/cardLoading";
-import { limitPokemons } from "../../../services/variaveis";
+import { limitPokemons } from "../../../utils/constants/constants";
 
 export const PokemonList = ({ setPokemonData }) => {
    const [pokemons, setPokemon] = useState([])

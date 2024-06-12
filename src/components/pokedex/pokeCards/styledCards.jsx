@@ -41,12 +41,22 @@ export const Item = styled.li`
       box-shadow: 0px 5px 4px #0000007a;
       cursor: grab;
    }
+
+   @media (max-width: 900px){
+      width: 350px;
+      height: 200px;
+   }
 `;
 
 export const PokemonImage = styled.img`
    width: 160px;
    height: 160px;
    transition: transform 0.5s ease;
+
+   @media (max-width: 900px){
+      width: 140px;
+      height: 140px;
+   }
 `;
 
 export const Box = styled.div`

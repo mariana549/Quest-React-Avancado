@@ -3,7 +3,7 @@ import Context from "../../../contexts/pokeDados/context"
 import { Option, SelectTypes } from "./styledTypes"
 import { getPokedex, getPokemon } from "../../requestApi"
 import axios from "axios"
-import { limitPokemons } from "../../variaveis"
+import { limitPokemons } from "../../../utils/constants/constants"
 
 function PokeTypesFiltered() {
    const { pokemons, setPokemon, setShowButtons } = useContext(Context)

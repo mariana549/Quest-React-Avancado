@@ -16,15 +16,14 @@ export const Pesquisar = styled.input`
       border: solid 2px #ffffff97;
    }
 
-   @media (max-width: 1200px) {
-      width: 400px;
-   }
-
    @media (max-width: 768px) {
-      width: 250px;
+      width: 450px;
+   }
+   @media (max-width: 570px) {
+      width: 380px;
    }
 
    @media (max-width: 375px) {
-      width: 200px;
+      width: 250px;
    }
 `

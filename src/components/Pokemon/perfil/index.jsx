@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Box, ConteudoBox, H3, Hr, Imagem, ImgContainer, Main, PerfilTitulo, PokeId, Tipo, TypesList, Return } from './styledPerfil';
+import { Box, ConteudoBox, H3, Hr, Imagem, ImgContainer, Main, PerfilTitulo, PokeId, Tipo, TypesList, Return, Div } from './styledPerfil';
 import Container from '../../container';
 import TableDados from '../tableDados';
 import { HabilitiePokemon } from '../abilities';
@@ -15,10 +15,10 @@ export const Pokemon = ({ pokemonData }) => {
   return (
     <Main className={type}>
       <Container>
-        <ConteudoBox>
+        <Div>
           <PerfilTitulo className={type}>{pokemon.name}</PerfilTitulo>
           <PokeId>#{pokemon.id} </PokeId>
-        </ConteudoBox>
+        </Div>
         <ImgContainer>
           <abbr title="Normal version">
             <Imagem
@@ -40,6 +40,11 @@ export const Pokemon = ({ pokemonData }) => {
             />
           </abbr>
         </ImgContainer>
+        <TypesList>
+          {pokemon.types.map((type, i) => (
+            <Tipo key={i}>{type.type.name}</Tipo>
+          ))}
+        </TypesList>
         <ConteudoBox>
           <Box>
             <TableDados
@@ -49,11 +54,6 @@ export const Pokemon = ({ pokemonData }) => {
               type={type}
               baseExp={pokemon.base_experience}
             />
-            <TypesList>
-              {pokemon.types.map((type, i) => (
-                <Tipo key={i}>{type.type.name}</Tipo>
-              ))}
-            </TypesList>
           </Box>
           <Box>
             <H3 className={type}>Abilities</H3>
@@ -68,13 +68,13 @@ export const Pokemon = ({ pokemonData }) => {
           </Box>
         </ConteudoBox>
         <Hr />
-          <Box>
+        <Box>
           <H3 className={type}>Movements</H3>
-            <Moves
-              type={ type }
-              moves={ pokemon.moves }
-            />
-          </Box>
+          <Moves
+            type={type}
+            moves={pokemon.moves}
+          />
+        </Box>
         <Link to={"/"}><Return className={type}>Return</Return></Link>
       </Container>
     </Main>
