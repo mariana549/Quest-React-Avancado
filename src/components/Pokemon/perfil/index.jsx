@@ -20,21 +20,25 @@ export const Pokemon = ({ pokemonData }) => {
           <PokeId>#{pokemon.id} </PokeId>
         </ConteudoBox>
         <ImgContainer>
-          <Imagem
-            src={pokemon.sprites?.other?.["official-artwork"]?.front_default}
-            alt={pokemon.name}
-            style={{
-              transform: "translateX(20px)",
-            }}
-          />
-          <Imagem
-            src={pokemon.sprites?.other?.["official-artwork"]?.front_shiny}
-            alt={pokemon.name}
-            style={{
-              transform: "translateX(-20px)",
-              scale: "0.7",
-            }}
-          />
+          <abbr title="Normal version">
+            <Imagem
+              src={pokemon.sprites?.other?.["official-artwork"]?.front_default}
+              alt={pokemon.name}
+              style={{
+                transform: "translateX(20px)",
+              }}
+            />
+          </abbr>
+          <abbr title="Shiny version">
+            <Imagem
+              src={pokemon.sprites?.other?.["official-artwork"]?.front_shiny}
+              alt={pokemon.name}
+              style={{
+                transform: "translateX(-20px)",
+                scale: "0.7",
+              }}
+            />
+          </abbr>
         </ImgContainer>
         <ConteudoBox>
           <Box>

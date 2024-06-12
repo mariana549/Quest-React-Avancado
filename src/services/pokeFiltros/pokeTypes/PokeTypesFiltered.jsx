@@ -1,17 +1,26 @@
 import { useContext } from "react"
 import Context from "../../../contexts/pokeDados/context"
 import { Option, SelectTypes } from "./styledTypes"
+import { getPokedex, getPokemon } from "../../requestApi"
+import axios from "axios"
+import { limitPokemons } from "../../variaveis"
 
 function PokeTypesFiltered() {
-   const { pokemons, setPokemon } = useContext(Context)
+   const { pokemons, setPokemon, setShowButtons } = useContext(Context)
 
-   const getPokemonsTypes = (type) => {
-      const filteredPokemons = pokemons.filter(pokemon =>
-         pokemon.types.map(e => e.type.name).includes(type))
-      type ? setPokemon(filteredPokemons) : setPokemon(pokemons)
+   const getPokemonsTypes = async (type) => {
+      const data = await getPokedex(limitPokemons, 0);
+      const namesPokemons = data.map(poke => poke.name)
+      const pokePromises = await namesPokemons.map(async (pokeName) => await getPokemon(pokeName))
+      const pokeDados = await axios.all(pokePromises)
+      const filteredPokemons = pokeDados.filter((pokemon) => pokemon.types.map(e => e.type.name).includes(type))
+
+      setPokemon(type !== "" ? filteredPokemons : pokemons) 
+      setShowButtons(false)
    }
 
    return (
+      <>
       <SelectTypes value="types" onChange={e => getPokemonsTypes(e.target.value)}>
          <Option value="" />
          <Option value="bug">bug </Option>
@@ -32,7 +41,7 @@ function PokeTypesFiltered() {
          <Option value="steel">steel </Option>
          <Option value="water">water </Option>
       </SelectTypes>
-
+      </>
    )
 }
 

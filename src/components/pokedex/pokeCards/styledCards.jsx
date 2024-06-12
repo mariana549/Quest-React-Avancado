@@ -21,7 +21,7 @@ export const PokeCards = styled.div`
 `
 
 export const Id = styled.span`
-   font-size: 27px;
+   font-size: 25px;
    color: white;
    font-weight: bold;
 `
@@ -29,8 +29,8 @@ export const Id = styled.span`
 export const Item = styled.li`
    display: flex;
    align-items: center;
-   width: 350px;
-   height: 200px;
+   width: 400px;
+   height: 250px;
    background:  ${(props) => Themes.cardBg[props.children[0].props.children[2].props.children[0].props.children]};
    border-radius: 20px;
    transition: transform 0.3s ease;
@@ -44,8 +44,8 @@ export const Item = styled.li`
 `;
 
 export const PokemonImage = styled.img`
-   width: 140px;
-   height: 140px;
+   width: 160px;
+   height: 160px;
    transition: transform 0.5s ease;
 `;
 
@@ -70,5 +70,5 @@ export const TypesList = styled.ul`
 export const Tipo = styled.li`
    color: ${(props) =>  Themes.types[props.children]};
    font-weight: bold;
-   font-size: 14px;
+   font-size: 18px;
 `

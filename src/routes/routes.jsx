@@ -9,7 +9,7 @@ import Colors from "../utils/colors"
 
 function AppRoutes() {
    const [pokemonData, setPokemonData] = useState({})
-   const [theme, setTheme] = useState("dark")
+   const [theme, setTheme] = useState("light")
 
    function togglerButton() {
       setTheme((prevState) => prevState === 'light' ? "dark" : "light")

@@ -9,8 +9,8 @@ import { filteredPokemonsName } from "../../services/pokeFiltros/pokeSprites/pok
 
 export const PokeHeader = () => {
    const { pokemons } = useContext(Context)
-   const pokeNames = ["pikachu", "charmander", "bulbasaur", "squirtle"];
 
+   const pokeNames = ["pikachu", "charmander", "bulbasaur", "squirtle"];
    const imgs = filteredPokemonsName(pokemons, pokeNames)
 
    return (

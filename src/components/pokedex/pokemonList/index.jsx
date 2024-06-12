@@ -3,24 +3,29 @@ import Card from "../pokeCards";
 import PropTypes from 'prop-types';
 import { PokeHeader } from "../../pokeHeader";
 import { Button } from "../../pokeButton";
-import { Lista, Main } from "./styledPokemonList";
+import { Error, Lista, Main } from "./styledPokemonList";
 import Provider from "../../../contexts/pokeDados/Provider";
 import { goUpTop } from "../../../utils/scrollToButton";
 import { getPokedex, getPokemon } from "../../../services/requestApi";
 import Container from "../../container";
 import axios from "axios";
 import CardLoanding from "../../../utils/cardLoading";
+import { limitPokemons } from "../../../services/variaveis";
 
 export const PokemonList = ({ setPokemonData }) => {
    const [pokemons, setPokemon] = useState([])
    const [pokemonsVisiveis, setPokemonVisiveis] = useState(10)
    const [loading, setLoading] = useState(true);
-   const limitPokemons = 100;
+   const [showButtons, setShowButtons] = useState(true);
+   console.log(showButtons)
+
+   const pokemonsList = pokemons.slice(0, pokemonsVisiveis)
 
    useEffect(() => {
       const fechPokemon = async () => {
          try {
-            const data = await getPokedex(limitPokemons, 0);
+            // esse trecho faz uma chamada na api de 10 em 10 pokemons, para não sobrecarregar o site.
+            const data = await getPokedex(pokemonsVisiveis, 0);
 
             const namesPokemons = data.map(poke => poke.name)
 
@@ -35,14 +40,16 @@ export const PokemonList = ({ setPokemonData }) => {
          }
       }
       fechPokemon()
-   }, [])
+   }, [pokemonsVisiveis])
 
    const handlerShowMore = () => {
-      setPokemonVisiveis(pokemonsVisiveis + 10);
+      setPokemonVisiveis((pokemonsVisiveis) =>
+         // esse trecho verifica toda vez que essa função executada se os pokemons visiveis ja atingiu o limite.
+         pokemonsVisiveis !== limitPokemons ? pokemonsVisiveis + 10 : pokemonsVisiveis);
    }
 
    return (
-      <Provider value={{ pokemons: pokemons, setPokemon: setPokemon }}>
+      <Provider value={{ pokemons: pokemons, setPokemon: setPokemon, setShowButtons: setShowButtons }}>
          <PokeHeader />
          <Main>
             <Container>
@@ -50,15 +57,20 @@ export const PokemonList = ({ setPokemonData }) => {
                   {loading ?
                      <CardLoanding />
                      :
-                     (pokemonsVisiveis > 0 ?
-                        <Card pokemon={pokemons} setPokemonData={setPokemonData} /> : "pokemons undefined")
+                     // nesse trecho verifica se tem pokemons, se tiver vai renderizar os cards de 0 a o numero de pokemons visiveis, se não, vai mostrar a mensagem de error.
+                     (pokemons.length > 0 ?
+                        <Card
+                           pokemon={pokemonsList}
+                           setPokemonData={setPokemonData}
+                        /> :
+                        <Error>pokemons not found or undefined</Error>)
                   }
                </Lista>
-               {pokemonsVisiveis < limitPokemons && (
-                  <Button onClick={handlerShowMore} background="#437bff">Buscar Mais</Button>
+               {showButtons && pokemonsVisiveis < limitPokemons && (
+                  <Button onClick={handlerShowMore} background="#437bff">Search More</Button>
                )}
-               {pokemonsVisiveis > limitPokemons - 1 && (
-                  <Button onClick={goUpTop}>Subir para Topo</Button>
+               {showButtons && pokemonsVisiveis > limitPokemons - 1 && (
+                  <Button onClick={goUpTop}>Go up to</Button>
                )}
             </Container>
          </Main>

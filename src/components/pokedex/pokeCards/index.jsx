@@ -12,6 +12,7 @@ export default function Card({ pokemon, setPokemonData }) {
                      to={`Perfil/${poke.name}`}
                      key={i}
                      onClick={() => setPokemonData(poke)}
+                     name={poke.name}
                   >
                      <Item>
                         <Box>

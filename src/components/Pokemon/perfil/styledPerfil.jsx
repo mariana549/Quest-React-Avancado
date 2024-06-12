@@ -19,7 +19,7 @@ export const Main = styled.main`
 }
 `
 export const Hr = styled.hr`
-  border: 1px solid #ffffff65;
+  border: 1px solid #ffffff8b;
   margin: 10px;
 `
 
