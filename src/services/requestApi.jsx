@@ -14,9 +14,11 @@ export async function getPokemon(name){
    return results
 }
 
-export async function pokeAbility(url) {
-   const response = await axios.get(url)
+export async function getAbilty(name){
+   const baseUrl = `https://pokeapi.co/api/v2/ability/${name}`
+   const response = await axios.get(`${baseUrl}`)
    const data = response.data.effect_entries
+
    return data
 }
 

@@ -1,28 +1,28 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { DescriptionAbilities, Li, Name } from "./styledAbilities";
+import { getAbilty } from "../../../services/requestApi";
 
 export const HabilitiePokemon = ({url, name, type}) => {
    const [pokemonData, setPokemonData] = useState({});
 
-  //  const descriptionAbilitiesEn = pokemonData.filter(e => e.language.name === "en")
-
-  const getUrl = async () => {
-    const response = await axios.get(url)
-    const data = response.data.effect_entries
-    setPokemonData(data)
-  }
-
-   useEffect(() => {
-      // getUrl()
-   }, []);
+   console.log(pokemonData)
+      // pokemonData não funciona porque tem ter uma forma assincrona de pegar as informações se não, não aparece na tela é da error.
+    // const descriptionAbilitiesEn =  pokemonData.filter(e => e.language.name === "en")
+    
+    useEffect(() => {
+      const getUrl = async () => {
+        const response = await getAbilty(name)
+        setPokemonData(response)
+     }
+    getUrl()
+  }, []);
  
    return (
      <Li>
        <Name className={type}>{name}: </Name>
        <DescriptionAbilities> Unable to render description</DescriptionAbilities>
-       {/* <DescriptionAbilities>{descriptionAbilitiesEn.map(e => e.effect)}</DescriptionAbilities> */}
+       {/* <DescriptionAbilities>{pokemonData.map(e => e.effect)}</DescriptionAbilities> */}
      </Li>
    );
 }
