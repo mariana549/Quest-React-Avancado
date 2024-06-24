@@ -17,7 +17,6 @@ export const PokemonList = ({ setPokemonData }) => {
    const [pokemonsVisiveis, setPokemonVisiveis] = useState(10)
    const [loading, setLoading] = useState(true);
    const [showButtons, setShowButtons] = useState(true);
-   console.log(showButtons)
 
    const pokemonsList = pokemons.slice(0, pokemonsVisiveis)
 

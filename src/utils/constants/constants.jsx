@@ -23,7 +23,7 @@ export const backgroundColorRadial = (props) =>
    ;
 
 export const ColorTexts = (props) =>
-   props.theme.Theme.mainBg === "transparent" ?
+    props.theme.Theme.mainBg === "transparent" ?
       Colors.types[props.className.type.name] :
       Colors.cardBg[props.className.type.name]
    ;
