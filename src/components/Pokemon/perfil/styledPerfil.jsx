@@ -75,8 +75,43 @@ export const Imagem = styled.img`
       width: 270px;
    }
    @media (max-width: 620px) {
-      width: 220px;
+      width: 200px;
    }
+   @media (max-width: 375px) {
+      width: 150px;
+   }
+`
+
+export const Imagem2 = styled.img`
+  width: 550px;
+  transform: translate(-20px);
+  scale: 0.7;
+
+@media (max-width: 1550px) {
+    width: 500px;
+ }
+@media (max-width: 1200px) {
+    width: 400px;
+ }
+ @media (max-width: 900px) {
+    width: 350px;
+ }
+ @media (max-width: 768px) {
+    width: 300px;
+ }
+ @media (max-width: 660px) {
+    width: 270px;
+ }
+ @media (max-width: 620px) {
+    width: 90%;
+    transform: translate(0);
+    scale: 1;
+    margin-left: 15px;
+ }
+ @media (max-width: 375px) {
+    width: 70%;
+    margin-left: 20px;
+ }
 `
 
 export const ConteudoBox = styled.div`

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Box, ConteudoBox, H3, Hr, Imagem, ImgContainer, Main, PerfilTitulo, PokeId, Tipo, TypesList, Return, Div } from './styledPerfil';
+import { Box, ConteudoBox, H3, Hr, Imagem, ImgContainer, Main, PerfilTitulo, PokeId, Tipo, TypesList, Return, Div, Imagem2 } from './styledPerfil';
 import Container from '../../container';
 import TableDados from '../tableDados';
 import { HabilitiePokemon } from '../abilities';
@@ -30,13 +30,8 @@ export const Pokemon = ({ pokemonData }) => {
             />
           </abbr>
           <abbr title="Shiny version">
-            <Imagem
+            <Imagem2
               src={pokemon.sprites?.other?.["official-artwork"]?.front_shiny}
-              alt={pokemon.name}
-              style={{
-                transform: "translateX(-20px)",
-                scale: "0.7",
-              }}
             />
           </abbr>
         </ImgContainer>
