@@ -20,7 +20,7 @@ export const Pesquisar = styled.input`
       width: 450px;
    }
    @media (max-width: 570px) {
-      width: 360px;
+      width: 340px;
    }
 
    @media (max-width: 375px) {
