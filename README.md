@@ -4,7 +4,7 @@ Este projeto é um desafio proposto pela DevQuest, uma plataforma de aprendizado
 
 ### veja o projeto 
 
-Clique [aqui](https://quest-react-avancado-aj77frgod-marianas-projects-c02dcf1f.vercel.app/) e veja o projeto funcionando.
+Clique [aqui](https://quest-react-avancado-nu.vercel.app/) e veja o projeto funcionando.
 
 ## Objetivo 🎯
 
