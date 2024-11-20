@@ -20,7 +20,7 @@ function AppRoutes() {
          <TogglerButton togglerButton={togglerButton} theme={theme} />
          <Routes>
             <Route path="/" element={<Home setPokemonData={setPokemonData}/>} />
-            <Route path="Perfil/:id" element={<Perfil pokemonData={pokemonData} />} />
+            <Route path="Perfil/:name" element={<Perfil pokemonData={pokemonData} />} />
          </Routes>
       </ThemeProvider>
    )
