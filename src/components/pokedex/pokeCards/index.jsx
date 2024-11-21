@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { Box, Div, Id, Item, NomePokemon, PokeCards, PokemonImage, Tipo, TypesList } from './styledCards';
 import { Link } from 'react-router-dom';
 
-export default function Card({ pokemon, setPokemonData }) {
+export default function Card({ pokemon }) {
    return (
       <PokeCards>
          {pokemon.map((poke, i) => {
@@ -11,7 +11,6 @@ export default function Card({ pokemon, setPokemonData }) {
                   <Link 
                      to={`Perfil/${poke.name}`}
                      key={i}
-                     onClick={() => setPokemonData(poke)}
                      name={poke.name}
                   >
                      <Item>
@@ -37,5 +36,4 @@ export default function Card({ pokemon, setPokemonData }) {
 
 Card.propTypes = {
    pokemon: PropTypes.array.isRequired,
-   setPokemonData: PropTypes.func.isRequired,
 };

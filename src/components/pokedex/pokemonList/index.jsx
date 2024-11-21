@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Card from "../pokeCards";
-import PropTypes from 'prop-types';
 import { PokeHeader } from "../../pokeHeader";
 import { Button } from "../../pokeButton";
 import { Error, Lista, Main } from "./styledPokemonList";
@@ -12,7 +11,7 @@ import axios from "axios";
 import CardLoanding from "../../../utils/cardLoading";
 import { limitPokemons } from "../../../utils/constants/constants";
 
-export const PokemonList = ({ setPokemonData }) => {
+export const PokemonList = () => {
    const [pokemons, setPokemon] = useState([])
    const [pokemonsVisiveis, setPokemonVisiveis] = useState(10)
    const [loading, setLoading] = useState(true);
@@ -58,10 +57,7 @@ export const PokemonList = ({ setPokemonData }) => {
                      :
                      // nesse trecho verifica se tem pokemons, se tiver vai renderizar os cards de 0 a o numero de pokemons visiveis, se não, vai mostrar a mensagem de error.
                      (pokemons.length > 0 ?
-                        <Card
-                           pokemon={pokemonsList}
-                           setPokemonData={setPokemonData}
-                        /> :
+                        <Card pokemon={pokemonsList}/> :
                         <Error>pokemons not found or undefined</Error>)
                   }
                </Lista>
@@ -76,8 +72,4 @@ export const PokemonList = ({ setPokemonData }) => {
       </Provider>
    )
 }
-
-PokemonList.propTypes = {
-   setPokemonData: PropTypes.func.isRequired
-};
 

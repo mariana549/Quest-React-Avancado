@@ -1,19 +1,5 @@
-import PropTypes from 'prop-types';
-import { Pokemon } from '../../components/Pokemon/perfil';
+import { Pokemon } from "../../components/Pokemon/perfil";
 
-export const Perfil = ({ pokemonData }) => {
-
-  return (
-    <>
-      <Pokemon pokemonData={pokemonData}/>
-    </>
-  )
-} 
-
-Perfil.defaultProps = {
-  pokemonData: {} 
+export const Perfil = () => {
+  return <Pokemon />;
 };
-
-Perfil.propTypes = {
-  pokemonData: PropTypes.any.isRequired
-}
