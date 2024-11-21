@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Color20 } from '../constants/constants';
 
 export const Box = styled.div`
    display: flex;
@@ -19,7 +20,7 @@ export const Box = styled.div`
 export const Carregando = styled.div`
    width: 350px;
    height: 200px;
-   background: ${(props) => props.theme.Theme.color20};
+   background: ${Color20};
    border-radius: 20px;
    margin: 30px;
 `

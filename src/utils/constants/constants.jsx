@@ -4,11 +4,20 @@ export const limitPokemons = 1302;
 
 export const MainBg = (props) => props.theme.Theme.mainBg;
 
+export const CardBg = (props) =>
+  Colors.cardBg[
+    props.children[0].props.children[2].props.children[0].props.children
+  ];
+
+export const CardDiv = (props) => props.theme.Theme.cardDiv;
+
 export const MainPerfilBg = (props) => props.theme.Theme.mainPerfilBg;
 
 export const Color0 = (props) => props.theme.Theme.color0;
 
-export const Color10 = (props) => props.theme.Theme.color0;
+export const Color10 = (props) => props.theme.Theme.color10;
+
+export const Color20 = (props) => props.theme.Theme.color20;
 
 export const Shadow = (props) => Colors.cardBg[props.className.type.name];
 
