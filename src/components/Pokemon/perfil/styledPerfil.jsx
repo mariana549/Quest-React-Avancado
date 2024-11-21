@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Color0, ColorCardBg, ColorTexts, ColorTypes, backgroundColorRadial, mainPerfilBg, shadow } from "../../../utils/constants/constants"
+import { Color0, ColorCardBg, ColorTexts, ColorTypes, BackgroundColorRadial, MainPerfilBg, Shadow } from "../../../utils/constants/constants"
 
 export const Main = styled.main`
   display: flex;
@@ -8,22 +8,44 @@ export const Main = styled.main`
   justify-content: center;
   padding: 20px 0px;
    background: radial-gradient(circle at 50% -130%,
-     ${backgroundColorRadial} 70%,
-     ${mainPerfilBg} 70.1%);
+     ${BackgroundColorRadial} 70%,
+     ${MainPerfilBg} 70.1%);
   @media (max-width: 900px) {
     padding: 20px;
   }
   @media (max-width: 780px) {
     background: radial-gradient(circle at 50% -165%,
-      ${backgroundColorRadial} 70%,
-      ${mainPerfilBg} 70.1%);;
+      ${BackgroundColorRadial} 70%,
+      ${MainPerfilBg} 70.1%);;
   }
   @media (max-width: 620px) {
     background: radial-gradient(circle at 50% -178%,
-      ${backgroundColorRadial} 70%,
-      ${mainPerfilBg} 70.1%);;
+      ${BackgroundColorRadial} 70%,
+      ${MainPerfilBg} 70.1%);;
   }
 `
+
+export const DivLoading = styled.div`
+  height: 100%;
+  padding: 20px;
+`;
+
+export const Loading = styled.p`
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+`;
+
+export const ArrowReturn = styled.img`
+  position: absolute;
+  top: 20px;
+  left: 50px;
+
+  &:hover {
+    transform: translateX(-5px);
+  }
+`;
+
 export const Hr = styled.hr`
   border: 1px solid #ffffff8b;
   margin: 10px;
@@ -41,7 +63,7 @@ export const Return = styled.p`
 
   &:hover {
     color: white;
-    text-shadow: 0px 0px 10px ${shadow};
+    text-shadow: 0px 0px 10px ${Shadow};
 }
 `
 export const ImgContainer = styled.div`
