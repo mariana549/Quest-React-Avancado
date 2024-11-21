@@ -42,7 +42,7 @@ export const PokemonList = () => {
 
    const handlerShowMore = () => {
       setPokemonVisiveis((pokemonsVisiveis) =>
-         // esse trecho verifica toda vez que essa função executada se os pokemons visiveis ja atingiu o limite.
+         // esse trecho verifica toda vez que essa função executada se os pokemons Visiveis ja atingiu o limite.
          pokemonsVisiveis !== limitPokemons ? pokemonsVisiveis + 10 : pokemonsVisiveis);
    }
 
@@ -55,7 +55,7 @@ export const PokemonList = () => {
                   {loading ?
                      <CardLoanding />
                      :
-                     // nesse trecho verifica se tem pokemons, se tiver vai renderizar os cards de 0 a o numero de pokemons visiveis, se não, vai mostrar a mensagem de error.
+                     // nesse trecho verifica se tem pokemons, se tiver vai renderizar os cards de 0 a o numero de pokemons Visiveis, se não, vai mostrar a mensagem de error.
                      (pokemons.length > 0 ?
                         <Card pokemon={pokemonsList}/> :
                         <Error>pokemons not found or undefined</Error>)

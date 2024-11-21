@@ -215,10 +215,10 @@ export const Tipo = styled.li`
   border-radius: 5px;
   text-transform: capitalize;
 
-  @media (max-width: 900px){
+  @media (max-width: 900px) {
     font-size: 1rem;
   }
-  `
+`;
 
 export const H3 = styled.h3`
   color: ${ColorTexts};
