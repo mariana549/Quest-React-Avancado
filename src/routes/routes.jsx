@@ -8,7 +8,6 @@ import { Themes } from "../utils/themes"
 import Colors from "../utils/colors"
 
 function AppRoutes() {
-   const [pokemonData, setPokemonData] = useState({})
    const [theme, setTheme] = useState("light")
 
    function togglerButton() {
@@ -19,8 +18,8 @@ function AppRoutes() {
       <ThemeProvider theme={{ Theme: Themes[theme], colors: Colors }}>
          <TogglerButton togglerButton={togglerButton} theme={theme} />
          <Routes>
-            <Route path="/" element={<Home setPokemonData={setPokemonData}/>} />
-            <Route path="Perfil/:name" element={<Perfil pokemonData={pokemonData} />} />
+            <Route path="/" element={<Home />} />
+            <Route path="Perfil/:name" element={<Perfil />} />
          </Routes>
       </ThemeProvider>
    )
