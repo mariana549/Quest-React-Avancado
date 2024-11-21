@@ -14,6 +14,9 @@ import {
   Return,
   Div,
   Imagem2,
+  ArrowReturn,
+  DivLoading,
+  Loading,
 } from "./styledPerfil";
 import Container from "../../container";
 import { HabilitiePokemon } from "../abilities";
@@ -21,6 +24,7 @@ import Moves from "../moves";
 import { useEffect, useState } from "react";
 import { getPokemon } from "../../../services/requestApi";
 import TableDados from '../tableDados';
+import arrow from "../../../assets/image/seta-esquerda.png";
 
 export const Pokemon = () => {
   const { name } = useParams();
@@ -50,17 +54,25 @@ export const Pokemon = () => {
     }
   }, [pokemon]);
 
-  if (pokemon == null) {
-    return <div style={{color: 'blue', background: "black"}}>Loading...</div>;
+  if (pokemon === null) {
+    return (
+      <DivLoading>
+        <Link to="/">
+          <ArrowReturn src={arrow} alt="Return" />
+        </Link>
+        <Loading>Loading...</Loading>
+      </DivLoading>
+    );
   }
 
   return (
     <Main className={type}>
+      <Link to="/">
+        <ArrowReturn src={arrow} alt="Return" />
+      </Link>
       <Container>
         <Div>
-          <PerfilTitulo className={type}>
-            {pokemon?.name}
-          </PerfilTitulo>
+          <PerfilTitulo className={type}>{pokemon?.name}</PerfilTitulo>
           <PokeId>#{pokemon?.id}</PokeId>
         </Div>
         <ImgContainer>
@@ -94,15 +106,11 @@ export const Pokemon = () => {
               type={type}
               baseExp={pokemon?.base_experience}
             />
-          </Box> 
+          </Box>
           <Box>
             <H3 className={type}>Abilities</H3>
             {pokemon?.abilities?.map((e, i) => (
-              <HabilitiePokemon
-                key={i}
-                name={e?.ability.name}
-                type={type}
-              />
+              <HabilitiePokemon key={i} name={e?.ability.name} type={type} />
             ))}
           </Box>
         </ConteudoBox>
