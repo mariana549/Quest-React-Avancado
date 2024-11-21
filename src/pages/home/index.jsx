@@ -13,7 +13,7 @@ export default function Home() {
   const pokemonsList = pokemons.slice(0, pokemonsVisiveis);
 
   useEffect(() => {
-    const fechPokemon = async () => {
+    const fetchPokemon = async () => {
       try {
         // esse trecho faz uma chamada na api de 10 em 10 pokemons, para não sobrecarregar o site.
         const data = await getPokedex(pokemonsVisiveis, 0);
@@ -32,9 +32,9 @@ export default function Home() {
         console.error(`Error fetching Pokemon API: ${error.message}`);
       }
     };
-    fechPokemon();
+    fetchPokemon();
   }, [pokemonsVisiveis]);
-  
+
   return (
     <Provider
       value={{
