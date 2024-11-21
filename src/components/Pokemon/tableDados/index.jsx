@@ -53,21 +53,19 @@ function TableDados({ pesoKg, alturaM, species, type, baseExp }) {
         </Tr>
 
         <Tr>
-          <Propriedade>Forma</Propriedade>
-          <Dado>
-            {shapePoke.name}
-          </Dado>
+          <Propriedade>Shape</Propriedade>
+          <Dado>{shapePoke.name}</Dado>
         </Tr>
         <Tr>
-          <Propriedade>Grupo de ovos</Propriedade>
+          <Propriedade>Egg Groups</Propriedade>
           <Dado>{egg}</Dado>
         </Tr>
         <Tr>
-          <Propriedade>Amizade Básica</Propriedade>
+          <Propriedade>Base Happiness</Propriedade>
           <Dado>{base_happiness}</Dado>
         </Tr>
         <Tr>
-          <Propriedade>Taxa de captura</Propriedade>
+          <Propriedade>Capture Rate</Propriedade>
           <Dado>{capture_rate}</Dado>
         </Tr>
       </Tbody>
