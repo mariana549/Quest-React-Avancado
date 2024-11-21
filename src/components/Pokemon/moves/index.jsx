@@ -1,26 +1,21 @@
-import { ListMoves, Nomes } from "./styledMoves"
-import PropTypes from "prop-types"
+import { useContext } from "react";
+import Context from "../../../contexts/pokeDados/context";
+import { ListMoves, Nomes } from "./styledMoves";
 
-function Moves({ type, moves }) {
+function Moves() {
+   const { type, pokemon } = useContext(Context)
    return (
-      <>
-         <ListMoves className={type}>
-            {moves
-               .map((movimento) => movimento.move.name)
-               .sort((a, b) => a.localeCompare(b))
-               .map((nomeMovimento, i) => (
-                  <Nomes key={i}>
-                     {nomeMovimento}
-                  </Nomes>
-               ))}
-         </ListMoves>
-      </>
-   )
-}
-
-Moves.propTypes = {
-   type: PropTypes.object.isRequired,
-   moves: PropTypes.arrayOf(PropTypes.object).isRequired,
+     <>
+       <ListMoves className={type}>
+         {pokemon?.moves
+           .map((movimento) => movimento.move.name)
+           .sort((a, b) => a.localeCompare(b))
+           .map((nomeMovimento, i) => (
+             <Nomes key={i}>{nomeMovimento}</Nomes>
+           ))}
+       </ListMoves>
+     </>
+   );
 }
 
 export default Moves

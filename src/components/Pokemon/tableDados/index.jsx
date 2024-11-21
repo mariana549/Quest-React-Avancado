@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import Context from "../../../contexts/pokeDados/context";
 import { pokeSpecies } from "../../../services/requestApi";
-import PropTypes from "prop-types";
 import {
   Dado,
   Propriedade,
@@ -10,26 +10,26 @@ import {
   Tr,
 } from "./styledTable";
 
-function TableDados({ pesoKg, alturaM, species, type, baseExp }) {
+function TableDados() {
+  const { peso, altura, type, pokemon } = useContext(Context);
   const [specie, setSpecie] = useState({});
   const [shapePoke, setShapePoke] = useState({ name: " " });
   const [eggPoke, setEggPoke] = useState([{ name: " " }]);
 
   const { capture_rate, base_happiness } = specie;
-
   const eggs = eggPoke.map((egg) => egg.name);
   const egg = eggs.join(", ");
 
   useEffect(() => {
     const fetchDadosPoke = async () => {
-      const speciesData = await pokeSpecies(species);
+      const speciesData = await pokeSpecies(pokemon?.species.url);
 
       setSpecie(speciesData);
       setShapePoke(speciesData.shape);
       setEggPoke(speciesData.egg_groups);
     };
     fetchDadosPoke();
-  }, [species]);
+  }, [pokemon]);
 
   return (
     <Table>
@@ -41,15 +41,15 @@ function TableDados({ pesoKg, alturaM, species, type, baseExp }) {
       <Tbody>
         <Tr>
           <Propriedade>Height:</Propriedade>
-          <Dado>{alturaM}m</Dado>
+          <Dado>{altura}m</Dado>
         </Tr>
         <Tr>
           <Propriedade>Weight:</Propriedade>
-          <Dado>{pesoKg}kg</Dado>
+          <Dado>{peso}kg</Dado>
         </Tr>
         <Tr>
           <Propriedade>Exp. base:</Propriedade>
-          <Dado>{baseExp}</Dado>
+          <Dado>{pokemon?.base_experience}</Dado>
         </Tr>
 
         <Tr>
@@ -72,13 +72,5 @@ function TableDados({ pesoKg, alturaM, species, type, baseExp }) {
     </Table>
   );
 }
-
-TableDados.propTypes = {
-  pesoKg: PropTypes.number.isRequired,
-  alturaM: PropTypes.number.isRequired,
-  baseExp: PropTypes.number.isRequired,
-  species: PropTypes.string.isRequired,
-  type: PropTypes.object.isRequired,
-};
 
 export default TableDados;

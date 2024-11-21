@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { DescriptionAbilities, Li, Name } from "./styledAbilities";
+import { useContext, useEffect, useState } from "react";
+import Context from "../../../contexts/pokeDados/context";
 import { getAbilty } from "../../../services/requestApi";
+import { DescriptionAbilities, Li, Name } from "./styledAbilities";
 
-export const HabilitiePokemon = ({ name, type }) => {
+export const HabilitiePokemon = ({ name }) => {
+  const { type } = useContext(Context);
   const [pokemonData, setPokemonData] = useState(null);
   const [habilites, setHabilites] = useState([{ effect: "" }]);
   
@@ -36,5 +38,4 @@ export const HabilitiePokemon = ({ name, type }) => {
 
 HabilitiePokemon.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.object.isRequired,
 };
