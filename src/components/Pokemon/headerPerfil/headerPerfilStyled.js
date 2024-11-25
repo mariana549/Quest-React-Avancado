@@ -4,7 +4,7 @@ import {
   ColorCardBg,
   ColorTexts,
   ColorTypes,
-} from "../../../utils/constants/constants";
+} from "../../../utils/constants/themeUtils.js";
 
 export const ImgContainer = styled.div`
   display: flex;

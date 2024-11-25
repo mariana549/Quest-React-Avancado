@@ -1,30 +1,34 @@
 import styled from "styled-components";
-import { CardBg, CardDiv, ColorTypes } from '../../../utils/constants/constants';
+import {
+  CardBg,
+  CardDiv,
+  ColorTypes,
+} from "../../../utils/constants/themeUtils";
 
 export const Div = styled.div`
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   margin: 0;
-   width: 50%;
-   height: 100%;
-   background: ${CardDiv};
-   box-shadow: inset 3px 1px 3px #00000081;
-   border-radius: 50% 15px 15px 50% ;
-` 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 50%;
+  height: 100%;
+  background: ${CardDiv};
+  box-shadow: inset 3px 1px 3px #00000081;
+  border-radius: 50% 15px 15px 50%;
+`;
 
 export const PokeCards = styled.div`
-   display: flex;
-   align-items: center;
-   flex-wrap: wrap;
-   gap: 20px;
-`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+`;
 
 export const Id = styled.span`
-   font-size: 25px;
-   color: white;
-   font-weight: bold;
-`
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+`;
 
 export const Item = styled.li`
   display: flex;
@@ -49,33 +53,33 @@ export const Item = styled.li`
 `;
 
 export const PokemonImage = styled.img`
-   width: 160px;
-   height: 160px;
-   transition: transform 0.5s ease;
+  width: 160px;
+  height: 160px;
+  transition: transform 0.5s ease;
 
-   @media (max-width: 900px){
-      width: 140px;
-      height: 140px;
-   }
+  @media (max-width: 900px) {
+    width: 140px;
+    height: 140px;
+  }
 `;
 
 export const Box = styled.div`
-   padding-left: 10px;
-   display: flex;
-   flex-direction: column;
-   gap: 7px;
-`
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+`;
 
 export const NomePokemon = styled.h2`
-   font-size: 25px;
-   color: #fff;
-   text-transform: capitalize;
+  font-size: 25px;
+  color: #fff;
+  text-transform: capitalize;
 `;
 
 export const TypesList = styled.ul`
-   display: flex;
-   gap: 5px;
-`
+  display: flex;
+  gap: 5px;
+`;
 
 export const Tipo = styled.li`
   color: ${ColorTypes};
