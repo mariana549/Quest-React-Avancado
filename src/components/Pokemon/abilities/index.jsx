@@ -1,17 +1,17 @@
 import PropTypes from "prop-types";
 import { useContext, useEffect, useState } from "react";
-import Context from "../../../contexts/pokeDados/context";
-import { getAbilty } from "../../../services/requestApi";
-import { DescriptionAbilities, Li, Name } from "./styledAbilities";
+import Context from "../../../contexts/perfilContext/context";
+import { getAbility } from "../../../services/requestApi/getAbility.js";
+import { DescriptionAbilities, Li, Name } from "./styledAbilities.js";
 
 export const HabilitiePokemon = ({ name }) => {
   const { type } = useContext(Context);
   const [pokemonData, setPokemonData] = useState(null);
   const [habilites, setHabilites] = useState([{ effect: "" }]);
-  
+
   useEffect(() => {
     const getUrl = async () => {
-      const response = await getAbilty(name);
+      const response = await getAbility(name);
       setPokemonData(response);
     };
     getUrl();
