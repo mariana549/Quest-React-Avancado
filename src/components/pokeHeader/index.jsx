@@ -1,39 +1,38 @@
-import logoPokemon from "../../assets/image/pokemon-logo.png"
-import { Logo, Header, Div, Box, BoxsContainer } from "./styledHeader";
-import PokeSearch from '../../services/pokeSearch';
-import PokeTypesFiltered from '../../services/pokeFiltros/pokeTypes/PokeTypesFiltered';
-import Container from "../container";
 import { useContext } from "react";
-import Context from "../../contexts/pokeDados/context";
-import { filteredPokemonsName } from "../../services/pokeFiltros/pokeSprites/pokeSprites";
+import logoPokemon from "../../assets/image/pokemon-logo.png";
+import PokeContext from "../../contexts/pokeContext/context";
+import { getPokemonSpritesByName } from '../../functions/getPokemonSpritesByName.js';
+import PokeSearch from "../../utils/pokeFilters/pokeSearch/index";
+import PokeTypesFiltered from "../../utils/pokeFilters/pokeTypes/PokeTypesFiltered";
+import Container from "../container/index";
+import { Box, BoxsContainer, Div, Header, Logo } from "./styledHeader.js";
 
 export const PokeHeader = () => {
-   const { pokemons } = useContext(Context)
+  const { pokemons } = useContext(PokeContext);
 
-   const pokeNames = ["pikachu", "charmander", "bulbasaur", "squirtle"];
-   const imgs = filteredPokemonsName(pokemons, pokeNames)
+  const pokeNames = ["pikachu", "charmander", "bulbasaur", "squirtle"];
+  const pokeImageFiltered = getPokemonSpritesByName(pokemons, pokeNames);
 
-   return (
-      <>
-         <Header >
-            <Container>
-               <Div>
-                  <Logo src={logoPokemon} alt="Logo" />
-                  <BoxsContainer>
-                     <Box>
-                        {imgs.map((gif, i) =>
-                           <img src={gif} key={i} alt="" />
-                        )}
-                     </Box>
-                     <Box>
-                        <PokeSearch />
-                        <PokeTypesFiltered />
-                     </Box>
-                  </BoxsContainer>
-               </Div>
-            </Container>
-         </Header>
-      </>
-   )
-}
-
+  return (
+    <>
+      <Header>
+        <Container>
+          <Div>
+            <Logo src={logoPokemon} alt="Logo" />
+            <BoxsContainer>
+              <Box>
+                {pokeImageFiltered.map((gif, i) => (
+                  <img src={gif} key={i} alt="" />
+                ))}
+              </Box>
+              <Box>
+                <PokeSearch />
+                <PokeTypesFiltered />
+              </Box>
+            </BoxsContainer>
+          </Div>
+        </Container>
+      </Header>
+    </>
+  );
+};
