@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import Context from "../../../contexts/pokeDados/context";
-import { pokeSpecies } from "../../../services/requestApi";
+import Context from "../../../contexts/perfilContext/context";
+import { pokeSpecies } from "../../../services/requestApi/getPokeSpecies.js";
 import {
   Dado,
   Propriedade,
@@ -8,7 +8,7 @@ import {
   Tbody,
   TituloTabela,
   Tr,
-} from "./styledTable";
+} from "./styledTable.js";
 
 function TableDados() {
   const { peso, altura, type, pokemon } = useContext(Context);

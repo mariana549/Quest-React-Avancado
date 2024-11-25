@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import Context from "../../../contexts/pokeDados/context";
-import { ListMoves, Nomes } from "./styledMoves";
+import Context from "../../../contexts/perfilContext/context";
+import { ListMoves, Nomes } from "./styledMoves.js";
 
 function Moves() {
    const { type, pokemon } = useContext(Context)

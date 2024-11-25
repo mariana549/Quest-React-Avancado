@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import Context from "../../../contexts/pokeDados/context";
+import Context from "../../../contexts/perfilContext/context";
 import { HabilitiePokemon } from "../abilities";
 import Moves from "../moves";
 import TableDados from "../tableDados";
-import { Box, ConteudoBox, H3, Hr } from "./styledPerfil";
+import { Box, ConteudoBox, H3, Hr } from "./styledPerfil.js";
 
 export const PokemonSobre = () => {
   const { pokemon, type } = useContext(Context);
