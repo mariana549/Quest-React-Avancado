@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import Context from "../../../contexts/pokeDados/context";
+import Context from "../../../contexts/perfilContext/context";
 import {
   Div,
   Imagem,
@@ -9,7 +9,7 @@ import {
   PokeId,
   Tipo,
   TypesList,
-} from "./headerPerfilStyled";
+} from "./headerPerfilStyled.js";
 
 function HeaderPerfil() {
   const { pokemon, type } = useContext(Context);
