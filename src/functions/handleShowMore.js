@@ -1,10 +1,9 @@
-import { limitPokemons } from "../utils/constants/constants";
+import { limitPokemons } from "../utils/constants/variaveis";
 
-export const handlerShowMore = (setPokemonVisiveis) => {
-  setPokemonVisiveis((pokemonsVisiveis) =>
-    // esse trecho verifica toda vez que essa função executada se os pokemons Visiveis ja atingiu o limite.
-    pokemonsVisiveis !== limitPokemons
-      ? pokemonsVisiveis + 10
-      : pokemonsVisiveis
+export const handlerShowMore = (setPokemonsVisiveis) => {
+  setPokemonsVisiveis((pokemonsVisiveis) =>
+    pokemonsVisiveis + 12 <= limitPokemons
+      ? pokemonsVisiveis + 12
+      : limitPokemons
   );
 };
