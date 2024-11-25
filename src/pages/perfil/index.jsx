@@ -4,9 +4,9 @@ import arrow from "../../assets/image/seta-esquerda.png";
 import Container from "../../components/container";
 import HeaderPerfil from "../../components/Pokemon/headerPerfil";
 import { PokemonSobre } from "../../components/Pokemon/sobre";
-import Provider from "../../contexts/pokeDados/Provider";
-import { getPokemon } from "../../services/requestApi";
-import { ArrowReturn, DivLoading, Loading, Main, Return } from "./perfilStled";
+import Provider from "../../contexts/perfilContext/Provider";
+import { getPokemon } from "../../services/requestApi/getPokemon.js";
+import { ArrowReturn, DivLoading, Loading, Main, Return } from "./perfilStled.js";
 
 export const Perfil = () => {
   const { name } = useParams();
@@ -18,7 +18,6 @@ export const Perfil = () => {
   useEffect(() => {
     async function fetchData() {
       const data = await getPokemon(name);
-      console.log(data, "data");
       setPokemon(data);
     }
     fetchData();
