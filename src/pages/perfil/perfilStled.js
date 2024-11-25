@@ -4,7 +4,7 @@ import {
   ColorTexts,
   MainPerfilBg,
   Shadow,
-} from "../../utils/constants/constants";
+} from "../../utils/constants/themeUtils";
 
 export const Main = styled.main`
   display: flex;
@@ -56,16 +56,16 @@ export const ArrowReturn = styled.img`
     transform: translateX(-5px);
   }
 
-  @media (max-width: 765px){
+  @media (max-width: 765px) {
     top: 10px;
     left: 30px;
   }
 
-  @media (max-width: 620px){
+  @media (max-width: 620px) {
     left: 20px;
   }
 
-  @media (max-width: 370px){
+  @media (max-width: 370px) {
     top: 5px;
     left: 10px;
   }
