@@ -1,14 +1,14 @@
-import { Box, Carregando } from "./styledLoanding";
+import { Box, Carregando } from "./styledLoanding.js";
 
 function CardLoanding() {
-    const numCarregando = 6;
-    const carregandoElements = [];
+  const numberOfCards = 6;
+  const elements = [];
 
-    for (let i = 0; i < numCarregando; i++) {
-        carregandoElements.push(<Carregando key={i} />);
-    }
+  for (let i = 0; i < numberOfCards; i++) {
+    elements.push(<Carregando key={i} />);
+  }
 
-    return <Box>{carregandoElements}</Box>;
+  return <Box>{elements}</Box>;
 }
 
 export default CardLoanding;
