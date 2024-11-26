@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import {
-   Box,
-   Div,
-   Id,
-   Item,
-   NomePokemon,
-   PokeCards,
-   PokemonImage,
-   Tipo,
-   TypesList,
+  Box,
+  Div,
+  Id,
+  Item,
+  NomePokemon,
+  PokeCards,
+  PokemonImage,
+  Tipo,
+  TypesList,
 } from "./styledCards.js";
 
 export default function Card({ pokemon }) {
