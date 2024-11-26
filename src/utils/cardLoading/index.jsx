@@ -8,7 +8,11 @@ function CardLoanding() {
     elements.push(<Carregando key={i} />);
   }
 
-  return <Box>{elements}</Box>;
+  return (
+    <Box role="alert" aria-busy="true" aria-label="loanding...">
+      {elements}
+    </Box>
+  );
 }
 
 export default CardLoanding;
