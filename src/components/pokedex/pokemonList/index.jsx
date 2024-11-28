@@ -1,12 +1,12 @@
 import { useContext, useEffect } from "react";
-import PokeContext from "../../../contexts/pokeContext/context";
+import PokeContext from "../../../contexts/pokeContext/pokeContext.jsx";
 import { handlerShowMore } from "../../../functions/handleShowMore.js";
-import { goUpTop } from "../../../functions/scrollToButton.js";
 import CardLoanding from "../../../utils/cardLoading";
 import Container from "../../container";
 import { Button } from "../../pokeButton";
 import Card from "../pokeCards";
 import { Error, Lista, Main } from "./styledPokemonList.js";
+import { ButtonScroll } from "../../../utils/ButtonScroll/index.jsx";
 
 export const PokemonList = () => {
   const {
@@ -14,8 +14,10 @@ export const PokemonList = () => {
     loading,
     pokemonsList,
     showButtons,
+    pixels,
     setPokemonsVisiveis,
     setShowButtons,
+    setPixels,
   } = useContext(PokeContext);
 
   useEffect(() => {
@@ -49,15 +51,13 @@ export const PokemonList = () => {
         <Lista>{renderPokemonCards()}</Lista>
         {showButtons && pokemonsList.length < pokemons.length && (
           <Button
-            onClick={() => handlerShowMore(setPokemonsVisiveis)}
+            onClick={() => handlerShowMore(setPokemonsVisiveis, setPixels)}
             background="#437bff"
           >
             Search More
           </Button>
         )}
-        {showButtons && pokemonsList.length >= pokemons.length && (
-          <Button onClick={goUpTop}>Go up to</Button>
-        )}
+        {pixels > 800 && <ButtonScroll />}
       </Container>
     </Main>
   );
