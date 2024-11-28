@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useContext, useEffect, useState } from "react";
-import Context from "../../../contexts/perfilContext/context";
+import Context from "../../../contexts/perfilContext/context.jsx";
 import { getAbility } from "../../../services/requestApi/getAbility.js";
 import { DescriptionAbilities, Li, Name } from "./styledAbilities.js";
 
@@ -10,11 +10,11 @@ export const HabilitiePokemon = ({ name }) => {
   const [habilites, setHabilites] = useState([{ effect: "" }]);
 
   useEffect(() => {
-    const getUrl = async () => {
+    const abilityData = async () => {
       const response = await getAbility(name);
       setPokemonData(response);
     };
-    getUrl();
+    abilityData();
   }, [name]);
 
   useEffect(() => {
