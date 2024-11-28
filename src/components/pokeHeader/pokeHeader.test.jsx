@@ -75,10 +75,6 @@ const mockGetPokemonsSpritesByName = jest.fn();
 describe("PokeHeader", () => {
   const themes = Themes;
 
-  // beforeEach(() => {
-
-  // })
-
   it("deve renderizar o componente corretamente", () => {
     render(
       <Router>
