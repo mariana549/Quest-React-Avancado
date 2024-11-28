@@ -1,10 +1,10 @@
 import axios from "axios";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import { getPokedex } from '../../services/requestApi/getPokedex';
-import { getPokemon } from '../../services/requestApi/getPokemon';
+import { getPokedex } from "../../services/requestApi/getPokedex";
+import { getPokemon } from "../../services/requestApi/getPokemon";
 import { limitPokemons } from "../../utils/constants/variaveis";
-import PokeContext from "./context";
+import PokeContext from "./pokeContext";
 
 export const PokeProvider = ({ children }) => {
   const [pokemons, setPokemons] = useState([]);
@@ -12,6 +12,7 @@ export const PokeProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [pokemonsVisiveis, setPokemonsVisiveis] = useState(12);
   const [showButtons, setShowButtons] = useState(true);
+  const [pixels ,setPixels] = useState(0);
   const pokemonsList = pokemons.slice(0, pokemonsVisiveis);
 
   useEffect(() => {
@@ -46,6 +47,8 @@ export const PokeProvider = ({ children }) => {
         setShowButtons,
         pokemonsVisiveis,
         setPokemonsVisiveis,
+        pixels,
+        setPixels,
       }}
     >
       {children}
