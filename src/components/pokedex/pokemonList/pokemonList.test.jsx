@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { PokemonList } from ".";
-import PokeContext from "../../../contexts/pokeContext/context";
+import PokeContext from "../../../contexts/pokeContext/pokeContext";
 import Colors from "../../../utils/colors";
 import { Themes } from "../../../utils/themes";
 
@@ -11,6 +11,7 @@ const mockContextValue = {
   loading: false,
   pokemonsList: [],
   showButtons: false,
+  pixels: 0,
   setPokemonsVisiveis: jest.fn(),
   setShowButtons: jest.fn(),
 };
@@ -129,10 +130,12 @@ describe("PokemonList", () => {
     );
     expect(screen.getByText(/search more/i)).toBeInTheDocument();
   });
-  it('Deve exibir o botão "Go up to"', () => {
+  
+  it('Deve exibir o botão "Go up to" ao inicializar e ao clicar deve exibir o botão "Go down to"', () => {
     const valueWithShowButtons = {
       ...mockContextValue,
       showButtons: true,
+      pixels: 900,
       pokemonsList: [
         {
           id: 1,
@@ -147,9 +150,7 @@ describe("PokemonList", () => {
           types: [{ type: { name: "grass" } }, { type: { name: "poison" } }],
         },
       ],
-      pokemons: [
-        { id: 1, name: "bulbasaur" },
-      ],
+      pokemons: [{ id: 1, name: "bulbasaur" }],
     };
     render(
       <Router>
@@ -160,7 +161,12 @@ describe("PokemonList", () => {
         </ThemeProvider>
       </Router>
     );
-    expect(screen.getByText(/go up to/i)).toBeInTheDocument();
+
+    const buttonUp = screen.getByAltText(/Button go up to/i);
+    expect(buttonUp).toBeInTheDocument();
+    fireEvent.click(buttonUp);
+    const buttonDown = screen.getByAltText(/Button go down to/i);
+    expect(buttonDown).toBeInTheDocument();
   });
 
   it("Deve atualizar o estado de showButtons corretamente", () => {
@@ -183,6 +189,4 @@ describe("PokemonList", () => {
 
     expect(mockSetShowButtons).toHaveBeenCalledWith(true);
   });
-
-
 });
