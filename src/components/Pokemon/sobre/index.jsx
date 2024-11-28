@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Context from "../../../contexts/perfilContext/context";
-import { HabilitiePokemon } from "../abilities";
+import { HabilitiePokemon } from "../habilities";
 import Moves from "../moves";
 import TableDados from "../tableDados";
 import { Box, ConteudoBox, H3, Hr } from "./styledPerfil.js";
