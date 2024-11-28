@@ -13,6 +13,7 @@ export const ButtonToggle = styled.button`
   height: 45px;
   margin: 10px 50px 0 0;
   position: absolute;
+  background-color: transparent;
 
   @media (max-width: 1200px){
       width: 35px;
